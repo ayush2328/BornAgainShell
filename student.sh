@@ -1,2 +1,3 @@
 #! /bin/bash
-ls
+ifconfig
+# ----for network scanning
