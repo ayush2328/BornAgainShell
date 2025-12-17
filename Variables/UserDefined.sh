@@ -3,3 +3,4 @@
 # Constant Variables
 readonly college=SRM
 echo "College Name: $college"
+read college
