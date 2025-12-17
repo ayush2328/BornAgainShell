@@ -3,6 +3,7 @@
 # Functions
 x=10
 myfunc(){
-    echo $x
+    local y=20
+    echo $x $y 
 }
 myfunc
