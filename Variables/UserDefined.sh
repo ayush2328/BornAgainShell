@@ -1,4 +1,6 @@
 # /bin/bash
 # <-----User Defined variables------>
-read -p "Enter IP Address: " ip #real life 
-nmap $ip
+today=$(date)
+echo "Today date is : $today"
+calendra=$(cal 2025)
+echo "This year calendra is: $calendra"
