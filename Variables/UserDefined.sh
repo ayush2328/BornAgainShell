@@ -1,6 +1,8 @@
 # /bin/bash
 # <-----User Defined variables------>
-# Constant Variables
-readonly college=SRM
-echo "College Name: $college"
-read college
+# Functions
+x=10
+myfunc(){
+    echo $x
+}
+myfunc
