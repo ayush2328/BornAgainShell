@@ -8,6 +8,17 @@ import AuditLogView from './components/AuditLogView';
 import ReportModal from './components/ReportModal';
 import SrmpAcademicModal from './components/SrmpAcademicModal';
 import VendorDetailModal from './components/VendorDetailModal';
+import {
+  INITIAL_DEMO_VENDORS,
+  INITIAL_DEMO_MITIGATIONS,
+  INITIAL_DEMO_AUDIT_LOGS,
+  computeDashboardMetrics,
+  getRiskLevel,
+  determineDecision,
+  calculateResidualRisk,
+  loadFromStorage,
+  saveToStorage
+} from './services/localDataService';
 
 export default function App() {
   const [activeTab, setActiveTab] = useState('dashboard');
@@ -24,7 +35,18 @@ export default function App() {
   const [isLightMode, setIsLightMode] = useState(false);
   const [loading, setLoading] = useState(true);
 
-  // Fetch all initial data
+  // Sync to localStorage as client fallback
+  const syncLocalState = (newVendors, newMitigations, newAuditLogs) => {
+    saveToStorage('tpv_sra_vendors', newVendors);
+    saveToStorage('tpv_sra_mitigations', newMitigations);
+    saveToStorage('tpv_sra_audit_logs', newAuditLogs);
+    setVendors(newVendors);
+    setMitigations(newMitigations);
+    setAuditLogs(newAuditLogs);
+    setMetrics(computeDashboardMetrics(newVendors, newMitigations));
+  };
+
+  // Fetch all initial data (with graceful Vercel / offline fallback)
   const refreshAllData = async () => {
     try {
       const [vRes, mRes, aRes, logRes] = await Promise.all([
@@ -34,22 +56,38 @@ export default function App() {
         fetch('/api/audit')
       ]);
 
-      const [vData, mData, aData, logData] = await Promise.all([
-        vRes.json(),
-        mRes.json(),
-        aRes.json(),
-        logRes.json()
-      ]);
+      if (vRes.ok && mRes.ok && aRes.ok && logRes.ok) {
+        const [vData, mData, aData, logData] = await Promise.all([
+          vRes.json(),
+          mRes.json(),
+          aRes.json(),
+          logRes.json()
+        ]);
 
-      setVendors(vData || []);
-      setMitigations(mData || []);
-      setMetrics(aData || null);
-      setAuditLogs(logData || []);
+        if (Array.isArray(vData) && vData.length > 0) {
+          setVendors(vData);
+          setMitigations(mData || []);
+          setMetrics(aData || null);
+          setAuditLogs(logData || []);
+          setLoading(false);
+          return;
+        }
+      }
     } catch (err) {
-      console.error("Failed to load data:", err);
-    } finally {
-      setLoading(false);
+      console.warn("FastAPI backend not active. Running on embedded client-side database for Vercel/offline mode:", err);
     }
+
+    // Fallback: load from localStorage or pristine demo dataset
+    const localVendors = loadFromStorage('tpv_sra_vendors', INITIAL_DEMO_VENDORS);
+    const localMitigations = loadFromStorage('tpv_sra_mitigations', INITIAL_DEMO_MITIGATIONS);
+    const localAudit = loadFromStorage('tpv_sra_audit_logs', INITIAL_DEMO_AUDIT_LOGS);
+    const computedMetrics = computeDashboardMetrics(localVendors, localMitigations);
+
+    setVendors(localVendors);
+    setMitigations(localMitigations);
+    setAuditLogs(localAudit);
+    setMetrics(computedMetrics);
+    setLoading(false);
   };
 
   useEffect(() => {
@@ -88,22 +126,66 @@ export default function App() {
       });
       if (res.ok) {
         await refreshAllData();
+        return;
       }
     } catch (err) {
-      console.error("Failed to create vendor:", err);
+      // Backend offline fallback
     }
+
+    // Client-side fallback creation
+    const newVendor = {
+      ...vendorData,
+      id: `VND-${Math.random().toString(36).substring(2, 8).toUpperCase()}`,
+      inherent_likelihood: 3,
+      inherent_impact: 3,
+      inherent_risk_score: 9,
+      inherent_risk_level: "Medium",
+      residual_likelihood: 3,
+      residual_impact: 3,
+      residual_risk_score: 9,
+      residual_risk_level: "Medium",
+      decision: "Approve with Conditions",
+      assessment_status: "Pending",
+      identified_gaps: []
+    };
+
+    const newLog = {
+      id: `LOG-${Math.random().toString(36).substring(2, 8).toUpperCase()}`,
+      timestamp: new Date().toISOString(),
+      user: "Risk Assessor (Ayush)",
+      action: "Vendor Registered",
+      entity_type: "Vendor",
+      entity_id: newVendor.id,
+      details: `Registered vendor ${newVendor.name} (${newVendor.service_type}) with Criticality=${newVendor.business_criticality}.`
+    };
+
+    syncLocalState([...vendors, newVendor], mitigations, [newLog, ...auditLogs]);
   };
 
   const handleDeleteVendor = async (vendorId) => {
     try {
-      await fetch(`/api/vendors/${vendorId}`, { method: 'DELETE' });
-      await refreshAllData();
-      if (selectedVendorForDetail?.id === vendorId) {
-        setSelectedVendorForDetail(null);
+      const res = await fetch(`/api/vendors/${vendorId}`, { method: 'DELETE' });
+      if (res.ok) {
+        await refreshAllData();
+        if (selectedVendorForDetail?.id === vendorId) setSelectedVendorForDetail(null);
+        return;
       }
     } catch (err) {
-      console.error("Failed to delete vendor:", err);
+      // Backend offline fallback
     }
+
+    const remaining = vendors.filter(v => v.id !== vendorId);
+    const newLog = {
+      id: `LOG-${Math.random().toString(36).substring(2, 8).toUpperCase()}`,
+      timestamp: new Date().toISOString(),
+      user: "SecOps Admin",
+      action: "Vendor Deprovisioned",
+      entity_type: "Vendor",
+      entity_id: vendorId,
+      details: `Decommissioned vendor profile ${vendorId}.`
+    };
+    syncLocalState(remaining, mitigations.filter(m => m.vendor_id !== vendorId), [newLog, ...auditLogs]);
+    if (selectedVendorForDetail?.id === vendorId) setSelectedVendorForDetail(null);
   };
 
   // Assessment submission
@@ -117,9 +199,70 @@ export default function App() {
       if (res.ok) {
         await refreshAllData();
         setActiveTab('dashboard');
+        return;
       }
     } catch (err) {
-      console.error("Failed to submit assessment:", err);
+      // Backend offline fallback
+    }
+
+    // Client-side fallback submission
+    const targetIdx = vendors.findIndex(v => v.id === assessmentPayload.vendor_id);
+    if (targetIdx !== -1) {
+      const updatedVendors = [...vendors];
+      const verifiedCount = mitigations.filter(m => m.vendor_id === assessmentPayload.vendor_id && m.status === 'Verified').length;
+      const { resL, resI, resScore, resLevel } = calculateResidualRisk(
+        assessmentPayload.inherent_likelihood,
+        assessmentPayload.inherent_impact,
+        verifiedCount
+      );
+
+      updatedVendors[targetIdx] = {
+        ...updatedVendors[targetIdx],
+        assessment_status: "Assessed",
+        last_assessment_date: new Date().toISOString().split('T')[0],
+        inherent_likelihood: assessmentPayload.inherent_likelihood,
+        inherent_impact: assessmentPayload.inherent_impact,
+        inherent_risk_score: assessmentPayload.inherent_risk_score,
+        inherent_risk_level: assessmentPayload.inherent_risk_level,
+        residual_likelihood: resL,
+        residual_impact: resI,
+        residual_risk_score: resScore,
+        residual_risk_level: resLevel,
+        decision: assessmentPayload.decision,
+        identified_gaps: assessmentPayload.identified_gaps || []
+      };
+
+      // Generate mitigation tasks for gaps
+      const newMitigations = [...mitigations];
+      (assessmentPayload.identified_gaps || []).forEach(gap => {
+        newMitigations.push({
+          id: `ACT-${Math.random().toString(36).substring(2, 8).toUpperCase()}`,
+          vendor_id: assessmentPayload.vendor_id,
+          vendor_name: updatedVendors[targetIdx].name,
+          title: `Remediate: ${gap.slice(0, 60)}...`,
+          description: `Mandate security improvement addressing gap: ${gap}`,
+          control_type: "Preventive",
+          associated_gap: gap,
+          owner: "Security Engineering Lead",
+          target_date: new Date(Date.now() + 30 * 24 * 3600 * 1000).toISOString().split('T')[0],
+          status: "Open",
+          evidence: "",
+          created_at: new Date().toISOString()
+        });
+      });
+
+      const newLog = {
+        id: `LOG-${Math.random().toString(36).substring(2, 8).toUpperCase()}`,
+        timestamp: new Date().toISOString(),
+        user: assessmentPayload.assessor_name || "Lead Assessor (Ayush)",
+        action: "Cybersecurity Assessment Executed",
+        entity_type: "Assessment",
+        entity_id: `ASM-${Date.now().toString().slice(-4)}`,
+        details: `NIST CSF 2.0 evaluation for ${updatedVendors[targetIdx].name}. Score=${assessmentPayload.inherent_risk_score} (${assessmentPayload.inherent_risk_level}).`
+      };
+
+      syncLocalState(updatedVendors, newMitigations, [newLog, ...auditLogs]);
+      setActiveTab('dashboard');
     }
   };
 
@@ -133,10 +276,46 @@ export default function App() {
       });
       if (res.ok) {
         await refreshAllData();
+        return;
       }
     } catch (err) {
-      console.error("Failed to update mitigation:", err);
+      // Backend offline fallback
     }
+
+    const updatedMitigations = mitigations.map(m => m.id === actionId ? { ...m, ...updates } : m);
+    const targetAction = updatedMitigations.find(m => m.id === actionId);
+    let updatedVendors = [...vendors];
+
+    if (targetAction) {
+      const targetVendorIdx = updatedVendors.findIndex(v => v.id === targetAction.vendor_id);
+      if (targetVendorIdx !== -1) {
+        const v = updatedVendors[targetVendorIdx];
+        const verifiedCount = updatedMitigations.filter(m => m.vendor_id === v.id && m.status === 'Verified').length;
+        const { resL, resI, resScore, resLevel } = calculateResidualRisk(v.inherent_likelihood, v.inherent_impact, verifiedCount);
+
+        updatedVendors[targetVendorIdx] = {
+          ...v,
+          residual_likelihood: resL,
+          residual_impact: resI,
+          residual_risk_score: resScore,
+          residual_risk_level: resLevel
+        };
+      }
+    }
+
+    const newLog = {
+      id: `LOG-${Math.random().toString(36).substring(2, 8).toUpperCase()}`,
+      timestamp: new Date().toISOString(),
+      user: "Lead Auditor (Ayush)",
+      action: updates.status === 'Verified' ? "Security Control Verified" : "Mitigation Action Updated",
+      entity_type: "Mitigation",
+      entity_id: actionId,
+      details: updates.status === 'Verified'
+        ? `Verified control with audit evidence: "${updates.evidence || 'Verified'}"`
+        : `Updated status to ${updates.status}`
+    };
+
+    syncLocalState(updatedVendors, updatedMitigations, [newLog, ...auditLogs]);
   };
 
   const handleCreateMitigation = async (actionData) => {
@@ -148,19 +327,33 @@ export default function App() {
       });
       if (res.ok) {
         await refreshAllData();
+        return;
       }
     } catch (err) {
-      console.error("Failed to create mitigation:", err);
+      // Backend offline fallback
     }
+
+    const newAction = {
+      ...actionData,
+      id: `ACT-${Math.random().toString(36).substring(2, 8).toUpperCase()}`,
+      created_at: new Date().toISOString()
+    };
+    syncLocalState(vendors, [...mitigations, newAction], auditLogs);
   };
 
   const handleDeleteMitigation = async (actionId) => {
     try {
-      await fetch(`/api/mitigations/${actionId}`, { method: 'DELETE' });
-      await refreshAllData();
+      const res = await fetch(`/api/mitigations/${actionId}`, { method: 'DELETE' });
+      if (res.ok) {
+        await refreshAllData();
+        return;
+      }
     } catch (err) {
-      console.error("Failed to delete mitigation:", err);
+      // Backend offline fallback
     }
+
+    const remaining = mitigations.filter(m => m.id !== actionId);
+    syncLocalState(vendors, remaining, auditLogs);
   };
 
   // Reset Demo Data
@@ -168,10 +361,13 @@ export default function App() {
     if (confirm("Reset all vendors, risk scores, and mitigations to pristine demo state?")) {
       try {
         await fetch('/api/audit/reset-demo', { method: 'POST' });
-        await refreshAllData();
       } catch (err) {
-        console.error("Failed to reset demo:", err);
+        // Continue to reset local storage
       }
+      localStorage.removeItem('tpv_sra_vendors');
+      localStorage.removeItem('tpv_sra_mitigations');
+      localStorage.removeItem('tpv_sra_audit_logs');
+      syncLocalState(INITIAL_DEMO_VENDORS, INITIAL_DEMO_MITIGATIONS, INITIAL_DEMO_AUDIT_LOGS);
     }
   };
 
