@@ -1,0 +1,1752 @@
+{
+  "vendors": [
+    {
+      "id": "VND-101",
+      "name": "CloudOps Infrastructure",
+      "service_type": "Cloud Provider (IaaS / PaaS)",
+      "description": "Primary cloud hosting provider hosting core microservices, transactional databases, and elastic compute clusters.",
+      "contact_name": "Sarah Jenkins",
+      "contact_email": "s.jenkins@cloudops-infra.io",
+      "contact_phone": "+1-800-555-0199",
+      "website": "https://cloudops-infra.io",
+      "business_criticality": "High",
+      "data_handled": [
+        "PII",
+        "Proprietary IP / Source Code",
+        "Internal Data"
+      ],
+      "systems_accessed": [
+        "Production Cloud DB",
+        "Customer Facing Portal"
+      ],
+      "contract_start": "2024-01-01",
+      "contract_end": "2027-01-01",
+      "owner_department": "DevOps & Cloud Engineering",
+      "assessment_status": "Assessed",
+      "last_assessment_date": "2026-09-22",
+      "next_assessment_date": "2027-01-20",
+      "inherent_likelihood": 4,
+      "inherent_impact": 4,
+      "inherent_risk_score": 16,
+      "inherent_risk_level": "High",
+      "residual_likelihood": 2,
+      "residual_impact": 3,
+      "residual_risk_score": 6,
+      "residual_risk_level": "Medium",
+      "decision": "Require Remediation",
+      "identified_gaps": [
+        "MFA not enforced for all privileged tenant root/admin accounts",
+        "Incident response drill evidence not provided within SLA (72h)"
+      ],
+      "created_at": "2026-08-18T14:31:20.161877",
+      "updated_at": "2026-09-22T14:31:20.161877"
+    },
+    {
+      "id": "VND-102",
+      "name": "PaySwift Gateway",
+      "service_type": "Payment Gateway & Tokenization",
+      "description": "Tier-1 PCI-DSS compliant credit card tokenization, recurrent billing, and localized payment gateway.",
+      "contact_name": "Marcus Vance",
+      "contact_email": "compliance@payswift-pay.com",
+      "contact_phone": "+1-888-PAY-FAST",
+      "website": "https://payswift-pay.com",
+      "business_criticality": "Critical",
+      "data_handled": [
+        "Financial / Payment Data",
+        "Cardholder Data (PCI)"
+      ],
+      "systems_accessed": [
+        "Billing Engine",
+        "Core API Webhook"
+      ],
+      "contract_start": "2023-06-15",
+      "contract_end": "2026-06-15",
+      "owner_department": "Finance & FinOps",
+      "assessment_status": "Assessed",
+      "last_assessment_date": "2026-09-22",
+      "next_assessment_date": "2027-01-20",
+      "inherent_likelihood": 1,
+      "inherent_impact": 4,
+      "inherent_risk_score": 4,
+      "inherent_risk_level": "Low",
+      "residual_likelihood": 1,
+      "residual_impact": 3,
+      "residual_risk_score": 3,
+      "residual_risk_level": "Low",
+      "decision": "Approve",
+      "identified_gaps": [],
+      "created_at": "2026-08-03T14:31:20.161877",
+      "updated_at": "2026-09-24T14:31:20.161877"
+    },
+    {
+      "id": "VND-103",
+      "name": "TalentPulse HRMS",
+      "service_type": "HRMS / SaaS Software",
+      "description": "Enterprise cloud-based human resource management, employee performance, salary disbursement, and benefits portal.",
+      "contact_name": "Elena Rostova",
+      "contact_email": "security@talentpulse-cloud.com",
+      "contact_phone": "+1-415-555-8821",
+      "website": "https://talentpulse-cloud.com",
+      "business_criticality": "High",
+      "data_handled": [
+        "PII",
+        "Employee Bank Records",
+        "Healthcare / PHI"
+      ],
+      "systems_accessed": [
+        "SSO / Identity Provider",
+        "Corporate VPN"
+      ],
+      "contract_start": "2024-03-01",
+      "contract_end": "2025-03-01",
+      "owner_department": "People & HR",
+      "assessment_status": "In Review",
+      "last_assessment_date": "2026-09-22",
+      "next_assessment_date": "2027-01-20",
+      "inherent_likelihood": 4,
+      "inherent_impact": 3,
+      "inherent_risk_score": 12,
+      "inherent_risk_level": "High",
+      "residual_likelihood": 2,
+      "residual_impact": 3,
+      "residual_risk_score": 6,
+      "residual_risk_level": "Medium",
+      "decision": "Require Remediation",
+      "identified_gaps": [
+        "Missing independent SOC 2 Type II attestation (only SOC 1 Type I submitted)",
+        "Lack of offsite immutable disaster recovery backup drills"
+      ],
+      "created_at": "2026-08-28T14:31:20.161877",
+      "updated_at": "2026-09-27T14:31:20.161877"
+    },
+    {
+      "id": "VND-104",
+      "name": "ByteShield IT Support",
+      "service_type": "Managed IT Services / MSP",
+      "description": "Third-party outsourced IT desktop helpdesk, server patch management, and remote active directory engineering.",
+      "contact_name": "Derek Cole",
+      "contact_email": "operations@byteshield-msp.net",
+      "contact_phone": "+1-650-555-0912",
+      "website": "https://byteshield-msp.net",
+      "business_criticality": "Critical",
+      "data_handled": [
+        "Corporate IP",
+        "Internal Admin Credentials"
+      ],
+      "systems_accessed": [
+        "Corporate VPN",
+        "Internal Network",
+        "Production Cloud DB"
+      ],
+      "contract_start": "2023-09-01",
+      "contract_end": "2025-09-01",
+      "owner_department": "Internal IT Ops",
+      "assessment_status": "Overdue",
+      "last_assessment_date": "2026-06-14",
+      "next_assessment_date": "2026-10-07",
+      "inherent_likelihood": 5,
+      "inherent_impact": 4,
+      "inherent_risk_score": 20,
+      "inherent_risk_level": "Critical",
+      "residual_likelihood": 4,
+      "residual_impact": 4,
+      "residual_risk_score": 16,
+      "residual_risk_level": "High",
+      "decision": "Reject/Escalate",
+      "identified_gaps": [
+        "Shared root accounts used across technicians without named individual logging",
+        "Jump host does not enforce FIDO2 or hardware MFA",
+        "No contractual supply chain review for tier-4 contractors"
+      ],
+      "created_at": "2026-06-04T14:31:20.161877",
+      "updated_at": "2026-10-07T14:31:20.161877"
+    },
+    {
+      "id": "VND-105",
+      "name": "SwiftDeliver Logistics",
+      "service_type": "Logistics & Supply Chain API",
+      "description": "Global freight tracking and automated shipment label generation API integrated into checkout fulfillment.",
+      "contact_name": "Ayesha Patel",
+      "contact_email": "api-support@swiftdeliver.org",
+      "contact_phone": "+44-20-7946-0922",
+      "website": "https://swiftdeliver.org",
+      "business_criticality": "Low",
+      "data_handled": [
+        "Shipping Address (Low PII)"
+      ],
+      "systems_accessed": [
+        "Webhook / API"
+      ],
+      "contract_start": "2024-05-10",
+      "contract_end": "2026-05-10",
+      "owner_department": "Supply Chain & Ops",
+      "assessment_status": "Assessed",
+      "last_assessment_date": "2026-09-22",
+      "next_assessment_date": "2027-01-20",
+      "inherent_likelihood": 3,
+      "inherent_impact": 2,
+      "inherent_risk_score": 6,
+      "inherent_risk_level": "Medium",
+      "residual_likelihood": 2,
+      "residual_impact": 2,
+      "residual_risk_score": 4,
+      "residual_risk_level": "Low",
+      "decision": "Approve with Conditions",
+      "identified_gaps": [
+        "API rate-limiting threshold documentation not provided"
+      ],
+      "created_at": "2026-08-13T14:31:20.161877",
+      "updated_at": "2026-09-30T14:31:20.161877"
+    },
+    {
+      "id": "VND-106",
+      "name": "Apex AI Analytics",
+      "service_type": "AI & Machine Learning SaaS",
+      "description": "External Large Language Model API provider for automated customer support sentiment classification.",
+      "contact_name": "Dr. Aris Thorne",
+      "contact_email": "security@apex-ai-labs.com",
+      "contact_phone": "+1-415-555-7731",
+      "website": "https://apex-ai-labs.com",
+      "business_criticality": "Medium",
+      "data_handled": [
+        "Customer Support Transcripts",
+        "Internal Analytics"
+      ],
+      "systems_accessed": [
+        "Webhook / API"
+      ],
+      "contract_start": "2024-07-01",
+      "contract_end": "2025-07-01",
+      "owner_department": "Customer Experience",
+      "assessment_status": "Assessed",
+      "last_assessment_date": "2026-10-08",
+      "next_assessment_date": "2027-01-20",
+      "inherent_likelihood": 3,
+      "inherent_impact": 3,
+      "inherent_risk_score": 9,
+      "inherent_risk_level": "Medium",
+      "residual_likelihood": 2,
+      "residual_impact": 2,
+      "residual_risk_score": 4,
+      "residual_risk_level": "Low",
+      "decision": "Approve with Conditions",
+      "identified_gaps": [
+        "Data retention policy does not explicitly guarantee zero training on customer prompts"
+      ],
+      "created_at": "2026-09-07T14:31:20.161877",
+      "updated_at": "2026-10-10T14:31:20.161877"
+    },
+    {
+      "id": "VND-107",
+      "name": "SentinelSOC Cyber",
+      "service_type": "Managed Security Service Provider (MSSP)",
+      "description": "External 24/7 Security Operations Center monitoring SIEM, telemetry logs, and performing threat hunting.",
+      "contact_name": "Rachel Adams",
+      "contact_email": "ciso-services@sentinelsoc.io",
+      "contact_phone": "+1-877-SEC-SOC1",
+      "website": "https://sentinelsoc.io",
+      "business_criticality": "Critical",
+      "data_handled": [
+        "Internal Logs & Telemetry",
+        "Network Flow Metadata",
+        "Incident Evidence"
+      ],
+      "systems_accessed": [
+        "SIEM Platform",
+        "EDR Console",
+        "Corporate VPN"
+      ],
+      "contract_start": "2023-11-01",
+      "contract_end": "2026-11-01",
+      "owner_department": "Cybersecurity & GRC",
+      "assessment_status": "Assessed",
+      "last_assessment_date": "2026-10-08",
+      "next_assessment_date": "2027-01-20",
+      "inherent_likelihood": 2,
+      "inherent_impact": 5,
+      "inherent_risk_score": 10,
+      "inherent_risk_level": "High",
+      "residual_likelihood": 1,
+      "residual_impact": 4,
+      "residual_risk_score": 4,
+      "residual_risk_level": "Low",
+      "decision": "Approve",
+      "identified_gaps": [
+        "Subcontractor fourth-party penetration testers do not sign standard organizational NDA"
+      ],
+      "created_at": "2026-08-23T14:31:20.161877",
+      "updated_at": "2026-10-08T14:31:20.161877"
+    },
+    {
+      "id": "VND-108",
+      "name": "AuthBridge ID",
+      "service_type": "Identity & Access Management (IdP)",
+      "description": "Enterprise cloud single sign-on (SSO), SAML/OIDC identity broker, and adaptive MFA authentication engine.",
+      "contact_name": "Tariq Mansoor",
+      "contact_email": "security@authbridge-identity.com",
+      "contact_phone": "+1-800-AUTH-90",
+      "website": "https://authbridge-identity.com",
+      "business_criticality": "Critical",
+      "data_handled": [
+        "PII",
+        "Hashed Passwords / Salted Hashes",
+        "MFA Seed Tokens"
+      ],
+      "systems_accessed": [
+        "SSO / Identity Provider",
+        "Customer Facing Portal"
+      ],
+      "contract_start": "2024-01-15",
+      "contract_end": "2027-01-15",
+      "owner_department": "IAM & Enterprise Security",
+      "assessment_status": "Assessed",
+      "last_assessment_date": "2026-09-22",
+      "next_assessment_date": "2027-01-20",
+      "inherent_likelihood": 1,
+      "inherent_impact": 4,
+      "inherent_risk_score": 4,
+      "inherent_risk_level": "Low",
+      "residual_likelihood": 1,
+      "residual_impact": 3,
+      "residual_risk_score": 3,
+      "residual_risk_level": "Low",
+      "decision": "Approve",
+      "identified_gaps": [],
+      "created_at": "2026-07-24T14:31:20.161877",
+      "updated_at": "2026-09-26T14:31:20.161877"
+    },
+    {
+      "id": "VND-109",
+      "name": "DataForge Analytics",
+      "service_type": "Big Data & Analytics Lakehouse",
+      "description": "Managed cloud data warehouse syncing analytical replicas of operational databases for business intelligence.",
+      "contact_name": "Viktor Vance",
+      "contact_email": "compliance@dataforge-cloud.net",
+      "contact_phone": "+1-408-555-3210",
+      "website": "https://dataforge-cloud.net",
+      "business_criticality": "High",
+      "data_handled": [
+        "Financial / Payment Data",
+        "PII",
+        "Internal Data"
+      ],
+      "systems_accessed": [
+        "Production Cloud DB",
+        "Internal Network"
+      ],
+      "contract_start": "2024-02-01",
+      "contract_end": "2026-02-01",
+      "owner_department": "Data Science & BI",
+      "assessment_status": "In Review",
+      "last_assessment_date": "2026-10-08",
+      "next_assessment_date": "2027-01-20",
+      "inherent_likelihood": 3,
+      "inherent_impact": 4,
+      "inherent_risk_score": 12,
+      "inherent_risk_level": "High",
+      "residual_likelihood": 2,
+      "residual_impact": 3,
+      "residual_risk_score": 6,
+      "residual_risk_level": "Medium",
+      "decision": "Require Remediation",
+      "identified_gaps": [
+        "Column-level masking is not enabled for sensitive PII/Financial tables in staging environments"
+      ],
+      "created_at": "2026-09-12T14:31:20.161877",
+      "updated_at": "2026-10-12T14:31:20.161877"
+    },
+    {
+      "id": "VND-110",
+      "name": "NexusCode CI/CD",
+      "service_type": "Developer Tooling & DevOps",
+      "description": "Automated code repository build runner, pipeline execution agent, and artifact registry.",
+      "contact_name": "Kevin Lin",
+      "contact_email": "secops@nexuscode-dev.io",
+      "contact_phone": "+1-415-555-9014",
+      "website": "https://nexuscode-dev.io",
+      "business_criticality": "High",
+      "data_handled": [
+        "Proprietary IP / Source Code",
+        "Internal Admin Credentials"
+      ],
+      "systems_accessed": [
+        "Internal Network",
+        "Production Cloud DB"
+      ],
+      "contract_start": "2023-08-01",
+      "contract_end": "2025-08-01",
+      "owner_department": "DevOps & Engineering",
+      "assessment_status": "Assessed",
+      "last_assessment_date": "2026-09-22",
+      "next_assessment_date": "2027-01-20",
+      "inherent_likelihood": 4,
+      "inherent_impact": 4,
+      "inherent_risk_score": 16,
+      "inherent_risk_level": "High",
+      "residual_likelihood": 2,
+      "residual_impact": 3,
+      "residual_risk_score": 6,
+      "residual_risk_level": "Medium",
+      "decision": "Require Remediation",
+      "identified_gaps": [
+        "Build runner pods run in privileged Docker-in-Docker container mode",
+        "OIDC federation not configured for cloud deployment role assumption"
+      ],
+      "created_at": "2026-08-08T14:31:20.161877",
+      "updated_at": "2026-10-02T14:31:20.161877"
+    },
+    {
+      "id": "VND-111",
+      "name": "SecureDesk Support",
+      "service_type": "Customer Support & CRM",
+      "description": "Customer helpdesk ticketing system, live support chat transcripts, and refund query resolution tool.",
+      "contact_name": "Claire Dupont",
+      "contact_email": "security-team@securedesk-crm.com",
+      "contact_phone": "+33-1-40-55-67-89",
+      "website": "https://securedesk-crm.com",
+      "business_criticality": "Medium",
+      "data_handled": [
+        "PII",
+        "Customer Support Transcripts"
+      ],
+      "systems_accessed": [
+        "Customer Facing Portal"
+      ],
+      "contract_start": "2024-04-01",
+      "contract_end": "2026-04-01",
+      "owner_department": "Customer Operations",
+      "assessment_status": "Assessed",
+      "last_assessment_date": "2026-10-08",
+      "next_assessment_date": "2027-01-20",
+      "inherent_likelihood": 2,
+      "inherent_impact": 3,
+      "inherent_risk_score": 6,
+      "inherent_risk_level": "Medium",
+      "residual_likelihood": 1,
+      "residual_impact": 2,
+      "residual_risk_score": 2,
+      "residual_risk_level": "Low",
+      "decision": "Approve",
+      "identified_gaps": [],
+      "created_at": "2026-09-02T14:31:20.161877",
+      "updated_at": "2026-10-14T14:31:20.161877"
+    },
+    {
+      "id": "VND-112",
+      "name": "HyperEdge CDN & WAF",
+      "service_type": "Content Delivery & Edge Security",
+      "description": "Global Anycast edge network, DDoS scrubbing center, and Web Application Firewall (WAF) rule engine.",
+      "contact_name": "Liam O'Connor",
+      "contact_email": "noc-security@hyperedge-cdn.com",
+      "contact_phone": "+353-1-496-0123",
+      "website": "https://hyperedge-cdn.com",
+      "business_criticality": "High",
+      "data_handled": [
+        "Encrypted HTTP Traffic",
+        "IP Access Logs"
+      ],
+      "systems_accessed": [
+        "Customer Facing Portal",
+        "Core API Webhook"
+      ],
+      "contract_start": "2023-10-01",
+      "contract_end": "2026-10-01",
+      "owner_department": "Infrastructure & SecOps",
+      "assessment_status": "Assessed",
+      "last_assessment_date": "2026-09-22",
+      "next_assessment_date": "2027-01-20",
+      "inherent_likelihood": 1,
+      "inherent_impact": 4,
+      "inherent_risk_score": 4,
+      "inherent_risk_level": "Low",
+      "residual_likelihood": 1,
+      "residual_impact": 3,
+      "residual_risk_score": 3,
+      "residual_risk_level": "Low",
+      "decision": "Approve",
+      "identified_gaps": [],
+      "created_at": "2026-07-14T14:31:20.161877",
+      "updated_at": "2026-09-20T14:31:20.161877"
+    },
+    {
+      "id": "VND-113",
+      "name": "Veritas Legal & Audit",
+      "service_type": "Professional Services & Legal Counsel",
+      "description": "External audit advisory firm conducting statutory privacy, GDPR, and SEC third-party risk reviews.",
+      "contact_name": "Eleanor Vance",
+      "contact_email": "compliance@veritas-legalpartners.com",
+      "contact_phone": "+1-212-555-8900",
+      "website": "https://veritas-legalpartners.com",
+      "business_criticality": "Medium",
+      "data_handled": [
+        "Proprietary IP / Source Code",
+        "Internal Data"
+      ],
+      "systems_accessed": [
+        "Corporate VPN"
+      ],
+      "contract_start": "2024-06-01",
+      "contract_end": "2025-06-01",
+      "owner_department": "Legal & Compliance",
+      "assessment_status": "Assessed",
+      "last_assessment_date": "2026-09-22",
+      "next_assessment_date": "2027-01-20",
+      "inherent_likelihood": 3,
+      "inherent_impact": 2,
+      "inherent_risk_score": 6,
+      "inherent_risk_level": "Medium",
+      "residual_likelihood": 2,
+      "residual_impact": 2,
+      "residual_risk_score": 4,
+      "residual_risk_level": "Low",
+      "decision": "Approve with Conditions",
+      "identified_gaps": [
+        "Partner laptops lack endpoint disk encryption enforcement audit attestation"
+      ],
+      "created_at": "2026-09-04T14:31:20.161877",
+      "updated_at": "2026-10-04T14:31:20.161877"
+    },
+    {
+      "id": "VND-114",
+      "name": "OmniMail Marketing",
+      "service_type": "Marketing & Email Distribution",
+      "description": "Cloud marketing campaign automation, transactional newsletter push, and unsubscriber compliance list manager.",
+      "contact_name": "Samira Khan",
+      "contact_email": "privacy@omnimail-engage.com",
+      "contact_phone": "+971-4-312-7890",
+      "website": "https://omnimail-engage.com",
+      "business_criticality": "Low",
+      "data_handled": [
+        "Email Addresses (Low PII)"
+      ],
+      "systems_accessed": [
+        "Webhook / API"
+      ],
+      "contract_start": "2024-03-15",
+      "contract_end": "2026-03-15",
+      "owner_department": "Marketing & Growth",
+      "assessment_status": "Assessed",
+      "last_assessment_date": "2026-10-08",
+      "next_assessment_date": "2027-01-20",
+      "inherent_likelihood": 2,
+      "inherent_impact": 2,
+      "inherent_risk_score": 4,
+      "inherent_risk_level": "Low",
+      "residual_likelihood": 1,
+      "residual_impact": 1,
+      "residual_risk_score": 1,
+      "residual_risk_level": "Low",
+      "decision": "Approve",
+      "identified_gaps": [],
+      "created_at": "2026-08-23T14:31:20.161877",
+      "updated_at": "2026-10-08T14:31:20.161877"
+    },
+    {
+      "id": "VND-115",
+      "name": "FacilitySmart IoT",
+      "service_type": "Physical Security & IoT Facility Ops",
+      "description": "Smart IoT card readers, biometric badge turnstiles, and cloud surveillance cameras for physical server rooms.",
+      "contact_name": "Robert Briggs",
+      "contact_email": "security@facilitysmart-iot.com",
+      "contact_phone": "+1-312-555-0987",
+      "website": "https://facilitysmart-iot.com",
+      "business_criticality": "Critical",
+      "data_handled": [
+        "Biometric Facial Hashes",
+        "Employee Badge IDs",
+        "Internal CCTV Feeds"
+      ],
+      "systems_accessed": [
+        "Internal Network",
+        "Corporate VPN"
+      ],
+      "contract_start": "2023-05-01",
+      "contract_end": "2025-05-01",
+      "owner_department": "Physical Security & Real Estate",
+      "assessment_status": "Overdue",
+      "last_assessment_date": "2026-05-25",
+      "next_assessment_date": "2026-08-23",
+      "inherent_likelihood": 5,
+      "inherent_impact": 5,
+      "inherent_risk_score": 25,
+      "inherent_risk_level": "Critical",
+      "residual_likelihood": 3,
+      "residual_impact": 4,
+      "residual_risk_score": 12,
+      "residual_risk_level": "High",
+      "decision": "Reject/Escalate",
+      "identified_gaps": [
+        "IoT controller firmware has not been patched for 18 months; exposed telnet service",
+        "Biometric templates stored in unencrypted flat files on local edge controller",
+        "Physical security breach protocol has zero contractual notification window"
+      ],
+      "created_at": "2026-05-15T14:31:20.161877",
+      "updated_at": "2026-08-23T14:31:20.161877"
+    },
+    {
+      "id": "VND-116",
+      "name": "VaultStore Escrow",
+      "service_type": "Disaster Recovery & Archival",
+      "description": "Geographically isolated cold storage tape archival and proprietary cryptographic software source code escrow.",
+      "contact_name": "Hannah Wright",
+      "contact_email": "vaultops@vaultstore-escrow.ch",
+      "contact_phone": "+41-22-789-4560",
+      "website": "https://vaultstore-escrow.ch",
+      "business_criticality": "Medium",
+      "data_handled": [
+        "Proprietary IP / Source Code",
+        "Encrypted Database Snapshots"
+      ],
+      "systems_accessed": [
+        "Internal Network"
+      ],
+      "contract_start": "2024-01-01",
+      "contract_end": "2028-01-01",
+      "owner_department": "Enterprise Risk & DR",
+      "assessment_status": "Assessed",
+      "last_assessment_date": "2026-09-22",
+      "next_assessment_date": "2027-01-20",
+      "inherent_likelihood": 1,
+      "inherent_impact": 3,
+      "inherent_risk_score": 3,
+      "inherent_risk_level": "Low",
+      "residual_likelihood": 1,
+      "residual_impact": 2,
+      "residual_risk_score": 2,
+      "residual_risk_level": "Low",
+      "decision": "Approve",
+      "identified_gaps": [],
+      "created_at": "2026-07-29T14:31:20.161877",
+      "updated_at": "2026-09-27T14:31:20.161877"
+    },
+    {
+      "id": "VND-117",
+      "name": "GlobalTranslate AI",
+      "service_type": "Translation & Localization",
+      "description": "Automated machine translation service localizing marketing assets and help center articles into 30+ languages.",
+      "contact_name": "Kenji Sato",
+      "contact_email": "tech@globaltranslate-ai.jp",
+      "contact_phone": "+81-3-5555-0143",
+      "website": "https://globaltranslate-ai.jp",
+      "business_criticality": "Low",
+      "data_handled": [
+        "Public Website Content"
+      ],
+      "systems_accessed": [
+        "Webhook / API"
+      ],
+      "contract_start": "2024-05-01",
+      "contract_end": "2025-05-01",
+      "owner_department": "Content & Localization",
+      "assessment_status": "Assessed",
+      "last_assessment_date": "2026-10-08",
+      "next_assessment_date": "2027-01-20",
+      "inherent_likelihood": 2,
+      "inherent_impact": 1,
+      "inherent_risk_score": 2,
+      "inherent_risk_level": "Low",
+      "residual_likelihood": 1,
+      "residual_impact": 1,
+      "residual_risk_score": 1,
+      "residual_risk_level": "Low",
+      "decision": "Approve",
+      "identified_gaps": [],
+      "created_at": "2026-09-12T14:31:20.161877",
+      "updated_at": "2026-10-10T14:31:20.161877"
+    },
+    {
+      "id": "VND-118",
+      "name": "KryptonShield EDR",
+      "service_type": "Cybersecurity Endpoint Protection",
+      "description": "Kernel-level endpoint detection and response (EDR) agent deployed across corporate laptops and cloud nodes.",
+      "contact_name": "Daniel Richter",
+      "contact_email": "threat-intel@kryptonshield.de",
+      "contact_phone": "+49-89-2030-4567",
+      "website": "https://kryptonshield.de",
+      "business_criticality": "Critical",
+      "data_handled": [
+        "Process Memory Dumps",
+        "Internal Logs & Telemetry",
+        "Internal Admin Credentials"
+      ],
+      "systems_accessed": [
+        "Internal Network",
+        "Production Cloud DB",
+        "Corporate VPN"
+      ],
+      "contract_start": "2023-12-01",
+      "contract_end": "2026-12-01",
+      "owner_department": "SOC & Incident Response",
+      "assessment_status": "Assessed",
+      "last_assessment_date": "2026-10-08",
+      "next_assessment_date": "2027-01-20",
+      "inherent_likelihood": 2,
+      "inherent_impact": 5,
+      "inherent_risk_score": 10,
+      "inherent_risk_level": "High",
+      "residual_likelihood": 1,
+      "residual_impact": 4,
+      "residual_risk_score": 4,
+      "residual_risk_level": "Low",
+      "decision": "Approve with Conditions",
+      "identified_gaps": [
+        "Agent kernel updates pushed automatically without internal canary ring staging"
+      ],
+      "created_at": "2026-07-19T14:31:20.161877",
+      "updated_at": "2026-10-11T14:31:20.161877"
+    },
+    {
+      "id": "VND-119",
+      "name": "FinTax Global",
+      "service_type": "Financial SaaS & Tax Compliance",
+      "description": "Automated VAT/GST cross-border invoice calculation, tax exemption validation, and fiscal ledger filing API.",
+      "contact_name": "Sophie Martin",
+      "contact_email": "security-office@fintax-global.eu",
+      "contact_phone": "+32-2-555-0178",
+      "website": "https://fintax-global.eu",
+      "business_criticality": "High",
+      "data_handled": [
+        "Financial / Payment Data",
+        "Employee Bank Records",
+        "Corporate Tax IDs"
+      ],
+      "systems_accessed": [
+        "Billing Engine",
+        "Core API Webhook"
+      ],
+      "contract_start": "2024-02-15",
+      "contract_end": "2026-02-15",
+      "owner_department": "Finance & Taxation",
+      "assessment_status": "In Review",
+      "last_assessment_date": "2026-09-22",
+      "next_assessment_date": "2027-01-20",
+      "inherent_likelihood": 3,
+      "inherent_impact": 4,
+      "inherent_risk_score": 12,
+      "inherent_risk_level": "High",
+      "residual_likelihood": 2,
+      "residual_impact": 3,
+      "residual_risk_score": 6,
+      "residual_risk_level": "Medium",
+      "decision": "Require Remediation",
+      "identified_gaps": [
+        "Third-party penetration testing report is over 14 months old; annual testing missed"
+      ],
+      "created_at": "2026-09-02T14:31:20.161877",
+      "updated_at": "2026-10-02T14:31:20.161877"
+    },
+    {
+      "id": "VND-120",
+      "name": "RapidHire Staffing",
+      "service_type": "Staff Augmentation & IT Contractors",
+      "description": "Contractor staffing agency providing external cloud software engineers and QA automation testers.",
+      "contact_name": "Amit Verma",
+      "contact_email": "compliance@rapadhire-staffing.in",
+      "contact_phone": "+91-80-4567-8901",
+      "website": "https://rapadhire-staffing.in",
+      "business_criticality": "High",
+      "data_handled": [
+        "Proprietary IP / Source Code",
+        "Internal Data"
+      ],
+      "systems_accessed": [
+        "Corporate VPN",
+        "SSO / Identity Provider"
+      ],
+      "contract_start": "2024-07-01",
+      "contract_end": "2025-07-01",
+      "owner_department": "Engineering Management",
+      "assessment_status": "Pending",
+      "last_assessment_date": null,
+      "next_assessment_date": "2026-11-05",
+      "inherent_likelihood": 4,
+      "inherent_impact": 4,
+      "inherent_risk_score": 16,
+      "inherent_risk_level": "High",
+      "residual_likelihood": 3,
+      "residual_impact": 3,
+      "residual_risk_score": 9,
+      "residual_risk_level": "Medium",
+      "decision": "Require Remediation",
+      "identified_gaps": [
+        "Contractor background checks not verified by independent screening provider prior to provisioning"
+      ],
+      "created_at": "2026-10-07T14:31:20.161877",
+      "updated_at": "2026-10-22T14:31:20.161877"
+    }
+  ],
+  "assessments": [
+    {
+      "id": "ASM-101",
+      "vendor_id": "VND-101",
+      "assessor_name": "Alex Morgan (Lead SecOps Assessor)",
+      "assessment_date": "2026-09-22",
+      "answers": [
+        {
+          "question_id": "AC-01",
+          "category": "Access Control & Identity",
+          "question": "Is Multi-Factor Authentication (MFA) mandatory for all vendor employees accessing organizational data or remote administration interfaces?",
+          "nist_ref": "NIST CSF 2.0 PR.AA-01 / SP 800-161",
+          "weight": 3,
+          "response": "no",
+          "evidence": "Audit revealed tenant master admin accounts used standard static passwords without conditional access MFA policy.",
+          "gap_notes": "Root tenant portal lacks mandatory WebAuthn/FIDO2 hardware enforcement."
+        },
+        {
+          "question_id": "AC-02",
+          "category": "Access Control & Identity",
+          "question": "Does the vendor enforce Role-Based Access Control (RBAC) and the Principle of Least Privilege across administrative boundaries?",
+          "nist_ref": "NIST CSF 2.0 PR.AA-05",
+          "weight": 2,
+          "response": "partial",
+          "evidence": "RBAC policy defined in IAM handbook but cross-tenant privilege reviews occur only annually.",
+          "gap_notes": "Quarterly entitlement reviews not formally signed off."
+        },
+        {
+          "question_id": "DP-01",
+          "category": "Data Protection & Cryptography",
+          "question": "Is organizational data encrypted in transit using modern cryptographic protocols (TLS 1.3/1.2) and at rest using strong standards (AES-256)?",
+          "nist_ref": "NIST CSF 2.0 PR.DS-01 / PR.DS-02",
+          "weight": 3,
+          "response": "yes",
+          "evidence": "TLS 1.3 enforced on all ingress endpoints; EBS/S3 buckets use AWS KMS CMK AES-256 with auto rotation.",
+          "gap_notes": ""
+        },
+        {
+          "question_id": "DP-02",
+          "category": "Data Protection & Cryptography",
+          "question": "Does the vendor have documented data retention, secure sanitization, and end-of-contract data return/deletion procedures?",
+          "nist_ref": "NIST CSF 2.0 PR.DS-10",
+          "weight": 2,
+          "response": "yes",
+          "evidence": "NIST SP 800-88 crypto-shredding certificate SLA provided in master service agreement.",
+          "gap_notes": ""
+        },
+        {
+          "question_id": "IR-01",
+          "category": "Incident Response & Breach Notification",
+          "question": "Does the vendor have an active, tested Incident Response Plan with a contractual breach notification SLA of 72 hours or less?",
+          "nist_ref": "NIST CSF 2.0 RS.MA-01 / GV.SC-08",
+          "weight": 3,
+          "response": "no",
+          "evidence": "Standard vendor agreement only offered 30-day breach notification; failed SRMP 72-hour requirement.",
+          "gap_notes": "Contractual amendment required for statutory 72h SLA."
+        },
+        {
+          "question_id": "VM-01",
+          "category": "Vulnerability & Patch Management",
+          "question": "Does the vendor conduct recurring automated vulnerability scanning and remediate critical/high CVEs within 14 days?",
+          "nist_ref": "NIST CSF 2.0 PR.IR-01 / DE.CM-08",
+          "weight": 3,
+          "response": "partial",
+          "evidence": "Vulnerability scans run weekly using Qualys, but median remediation for high CVEs was 27 days.",
+          "gap_notes": "Remediation SLA breaches 14-day policy window."
+        },
+        {
+          "question_id": "CO-01",
+          "category": "Compliance & Security Certifications",
+          "question": "Does the vendor possess valid, unexpired third-party security attestations (e.g., SOC 2 Type II, ISO/IEC 27001:2022, PCI-DSS)?",
+          "nist_ref": "NIST CSF 2.0 GV.SC-06",
+          "weight": 2,
+          "response": "yes",
+          "evidence": "SOC 2 Type II report audited by KPMG covering Nov 2024 to Nov 2025; ISO 27001:2022 certificate valid.",
+          "gap_notes": ""
+        },
+        {
+          "question_id": "BC-01",
+          "category": "Business Continuity & Resilience",
+          "question": "Are automated, encrypted, and immutable/offline backups maintained, with tested Recovery Time Objective (RTO) and Recovery Point Objective (RPO)?",
+          "nist_ref": "NIST CSF 2.0 RC.RP-01",
+          "weight": 2,
+          "response": "yes",
+          "evidence": "Cross-region S3 Object Lock immutable backups with tested RTO < 2h and RPO < 15m.",
+          "gap_notes": ""
+        },
+        {
+          "question_id": "SC-01",
+          "category": "Supply Chain & Fourth-Party Risk",
+          "question": "Does the vendor maintain a formal supply-chain risk management program evaluating their own critical subcontractors and hosting providers?",
+          "nist_ref": "NIST CSF 2.0 GV.SC-04 / GV.SC-07",
+          "weight": 2,
+          "response": "partial",
+          "evidence": "Vendor maintains subcontractor registry but lacks automated SBOM verification.",
+          "gap_notes": "Fourth-party dependency tracking is manual."
+        },
+        {
+          "question_id": "HS-01",
+          "category": "Human & Physical Security",
+          "question": "Are pre-employment background screenings conducted for personnel with administrative access, accompanied by mandatory security awareness training?",
+          "nist_ref": "NIST CSF 2.0 PR.AT-01",
+          "weight": 1,
+          "response": "yes",
+          "evidence": "Criminal and identity background checks mandatory through HireRight; 100% completion in annual phishing drill.",
+          "gap_notes": ""
+        }
+      ],
+      "inherent_likelihood": 4,
+      "inherent_impact": 4,
+      "inherent_risk_score": 16,
+      "inherent_risk_level": "High",
+      "identified_gaps": [
+        "MFA not enforced for all privileged tenant root/admin accounts",
+        "Incident response drill evidence not provided within SLA (72h)"
+      ],
+      "recommended_actions": [
+        "Mandate implementation of Access Control & Identity control (NIST CSF 2.0 PR.AA-01 / SP 800-161) prior to full production access",
+        "Upgrade Access Control & Identity control to full compliance (NIST CSF 2.0 PR.AA-05)",
+        "Mandate implementation of Incident Response & Breach Notification control (NIST CSF 2.0 RS.MA-01 / GV.SC-08) prior to full production access",
+        "Upgrade Vulnerability & Patch Management control to full compliance (NIST CSF 2.0 PR.IR-01 / DE.CM-08)",
+        "Upgrade Supply Chain & Fourth-Party Risk control to full compliance (NIST CSF 2.0 GV.SC-04 / GV.SC-07)"
+      ],
+      "decision": "Require Remediation",
+      "assessor_notes": "CloudOps Infrastructure holds vital tier-2 production databases. Until root MFA enforcement and 72-hour breach SLA are contractually bound and verified, production expansion is gated."
+    },
+    {
+      "id": "ASM-102",
+      "vendor_id": "VND-102",
+      "assessor_name": "Priya Sharma (Senior GRC Analyst)",
+      "assessment_date": "2026-09-22",
+      "answers": [
+        {
+          "question_id": "AC-01",
+          "category": "Access Control & Identity",
+          "question": "Is Multi-Factor Authentication (MFA) mandatory for all vendor employees accessing organizational data or remote administration interfaces?",
+          "nist_ref": "NIST CSF 2.0 PR.AA-01 / SP 800-161",
+          "weight": 3,
+          "response": "yes",
+          "evidence": "YubiKey FIDO2 hardware tokens mandated for all 100% engineering and operations employees.",
+          "gap_notes": ""
+        },
+        {
+          "question_id": "AC-02",
+          "category": "Access Control & Identity",
+          "question": "Does the vendor enforce Role-Based Access Control (RBAC) and the Principle of Least Privilege across administrative boundaries?",
+          "nist_ref": "NIST CSF 2.0 PR.AA-05",
+          "weight": 2,
+          "response": "yes",
+          "evidence": "Zero standing privileges; just-in-time PAM credentials with 30-minute expiry.",
+          "gap_notes": ""
+        },
+        {
+          "question_id": "DP-01",
+          "category": "Data Protection & Cryptography",
+          "question": "Is organizational data encrypted in transit using modern cryptographic protocols (TLS 1.3/1.2) and at rest using strong standards (AES-256)?",
+          "nist_ref": "NIST CSF 2.0 PR.DS-01 / PR.DS-02",
+          "weight": 3,
+          "response": "yes",
+          "evidence": "FIPS 140-3 Level 3 Hardware Security Modules (HSMs) used for tokenization; TLS 1.3 strictly enforced.",
+          "gap_notes": ""
+        },
+        {
+          "question_id": "DP-02",
+          "category": "Data Protection & Cryptography",
+          "question": "Does the vendor have documented data retention, secure sanitization, and end-of-contract data return/deletion procedures?",
+          "nist_ref": "NIST CSF 2.0 PR.DS-10",
+          "weight": 2,
+          "response": "yes",
+          "evidence": "PCI DSS requirement 3 token deletion verified during annual QSA assessment.",
+          "gap_notes": ""
+        },
+        {
+          "question_id": "IR-01",
+          "category": "Incident Response & Breach Notification",
+          "question": "Does the vendor have an active, tested Incident Response Plan with a contractual breach notification SLA of 72 hours or less?",
+          "nist_ref": "NIST CSF 2.0 RS.MA-01 / GV.SC-08",
+          "weight": 3,
+          "response": "yes",
+          "evidence": "24-hour critical incident notification clause signed in Enterprise Addendum.",
+          "gap_notes": ""
+        },
+        {
+          "question_id": "VM-01",
+          "category": "Vulnerability & Patch Management",
+          "question": "Does the vendor conduct recurring automated vulnerability scanning and remediate critical/high CVEs within 14 days?",
+          "nist_ref": "NIST CSF 2.0 PR.IR-01 / DE.CM-08",
+          "weight": 3,
+          "response": "yes",
+          "evidence": "Daily Snyk & Tenable scanning; critical CVEs patched in under 7 days in production.",
+          "gap_notes": ""
+        },
+        {
+          "question_id": "CO-01",
+          "category": "Compliance & Security Certifications",
+          "question": "Does the vendor possess valid, unexpired third-party security attestations (e.g., SOC 2 Type II, ISO/IEC 27001:2022, PCI-DSS)?",
+          "nist_ref": "NIST CSF 2.0 GV.SC-06",
+          "weight": 2,
+          "response": "yes",
+          "evidence": "PCI DSS v4.0 Level 1 Service Provider Attestation of Compliance (AoC) and clean SOC 2 Type II report.",
+          "gap_notes": ""
+        },
+        {
+          "question_id": "BC-01",
+          "category": "Business Continuity & Resilience",
+          "question": "Are automated, encrypted, and immutable/offline backups maintained, with tested Recovery Time Objective (RTO) and Recovery Point Objective (RPO)?",
+          "nist_ref": "NIST CSF 2.0 RC.RP-01",
+          "weight": 2,
+          "response": "yes",
+          "evidence": "Active-active multi-region failover across AWS us-east-1 and eu-west-1 with automated DNS health checks.",
+          "gap_notes": ""
+        },
+        {
+          "question_id": "SC-01",
+          "category": "Supply Chain & Fourth-Party Risk",
+          "question": "Does the vendor maintain a formal supply-chain risk management program evaluating their own critical subcontractors and hosting providers?",
+          "nist_ref": "NIST CSF 2.0 GV.SC-04 / GV.SC-07",
+          "weight": 2,
+          "response": "yes",
+          "evidence": "Formal C-SCRM program audited under NIST SP 800-161; automated dependency vulnerability alerts.",
+          "gap_notes": ""
+        },
+        {
+          "question_id": "HS-01",
+          "category": "Human & Physical Security",
+          "question": "Are pre-employment background screenings conducted for personnel with administrative access, accompanied by mandatory security awareness training?",
+          "nist_ref": "NIST CSF 2.0 PR.AT-01",
+          "weight": 1,
+          "response": "yes",
+          "evidence": "Global 10-year criminal background check and mandatory quarterly security training.",
+          "gap_notes": ""
+        }
+      ],
+      "inherent_likelihood": 1,
+      "inherent_impact": 4,
+      "inherent_risk_score": 4,
+      "inherent_risk_level": "Low",
+      "identified_gaps": [],
+      "recommended_actions": [],
+      "decision": "Approve",
+      "assessor_notes": "PaySwift Gateway demonstrates industry gold-standard security posture with 100% compliance across all 10 NIST domains. Approved for production cardholder transaction handling."
+    },
+    {
+      "id": "ASM-104",
+      "vendor_id": "VND-104",
+      "assessor_name": "Derek Lin (Senior SecOps Auditor)",
+      "assessment_date": "2026-06-14",
+      "answers": [
+        {
+          "question_id": "AC-01",
+          "category": "Access Control & Identity",
+          "question": "Is Multi-Factor Authentication (MFA) mandatory for all vendor employees accessing organizational data or remote administration interfaces?",
+          "nist_ref": "NIST CSF 2.0 PR.AA-01 / SP 800-161",
+          "weight": 3,
+          "response": "no",
+          "evidence": "Remote jump server accessed using static passwords; technicians share VPN credentials.",
+          "gap_notes": "Zero MFA on administrative gateway."
+        },
+        {
+          "question_id": "AC-02",
+          "category": "Access Control & Identity",
+          "question": "Does the vendor enforce Role-Based Access Control (RBAC) and the Principle of Least Privilege across administrative boundaries?",
+          "nist_ref": "NIST CSF 2.0 PR.AA-05",
+          "weight": 2,
+          "response": "no",
+          "evidence": "Generic shared 'admin-tech' domain account used across 14 support technicians.",
+          "gap_notes": "Shared root accounts violate NIST CSF 2.0 PR.AA-05."
+        },
+        {
+          "question_id": "DP-01",
+          "category": "Data Protection & Cryptography",
+          "question": "Is organizational data encrypted in transit using modern cryptographic protocols (TLS 1.3/1.2) and at rest using strong standards (AES-256)?",
+          "nist_ref": "NIST CSF 2.0 PR.DS-01 / PR.DS-02",
+          "weight": 3,
+          "response": "partial",
+          "evidence": "Internal jump boxes allow legacy TLS 1.0 protocols for backward compatibility with old client VMs.",
+          "gap_notes": "Weak TLS ciphers active on support jump hosts."
+        },
+        {
+          "question_id": "DP-02",
+          "category": "Data Protection & Cryptography",
+          "question": "Does the vendor have documented data retention, secure sanitization, and end-of-contract data return/deletion procedures?",
+          "nist_ref": "NIST CSF 2.0 PR.DS-10",
+          "weight": 2,
+          "response": "no",
+          "evidence": "Customer logs and credentials retained on technician laptops indefinitely.",
+          "gap_notes": "No sanitization policy or cryptographic wipe procedure."
+        },
+        {
+          "question_id": "IR-01",
+          "category": "Incident Response & Breach Notification",
+          "question": "Does the vendor have an active, tested Incident Response Plan with a contractual breach notification SLA of 72 hours or less?",
+          "nist_ref": "NIST CSF 2.0 RS.MA-01 / GV.SC-08",
+          "weight": 3,
+          "response": "no",
+          "evidence": "No documented Incident Response plan or tabletop exercise conducted in the past 24 months.",
+          "gap_notes": "Complete absence of incident response playbook."
+        },
+        {
+          "question_id": "VM-01",
+          "category": "Vulnerability & Patch Management",
+          "question": "Does the vendor conduct recurring automated vulnerability scanning and remediate critical/high CVEs within 14 days?",
+          "nist_ref": "NIST CSF 2.0 PR.IR-01 / DE.CM-08",
+          "weight": 3,
+          "response": "no",
+          "evidence": "Vulnerability scans performed only on ad-hoc basis; Windows server unpatched for 6 months.",
+          "gap_notes": "Multiple critical CVEs active on MSP jump gateway."
+        },
+        {
+          "question_id": "CO-01",
+          "category": "Compliance & Security Certifications",
+          "question": "Does the vendor possess valid, unexpired third-party security attestations (e.g., SOC 2 Type II, ISO/IEC 27001:2022, PCI-DSS)?",
+          "nist_ref": "NIST CSF 2.0 GV.SC-06",
+          "weight": 2,
+          "response": "no",
+          "evidence": "Vendor has no independent security certifications; provided self-attested checklist only.",
+          "gap_notes": "Missing SOC 2 Type II or ISO 27001."
+        },
+        {
+          "question_id": "BC-01",
+          "category": "Business Continuity & Resilience",
+          "question": "Are automated, encrypted, and immutable/offline backups maintained, with tested Recovery Time Objective (RTO) and Recovery Point Objective (RPO)?",
+          "nist_ref": "NIST CSF 2.0 RC.RP-01",
+          "weight": 2,
+          "response": "partial",
+          "evidence": "Local network drive backups made weekly, but no air-gapped or immutable cloud copies.",
+          "gap_notes": "Vulnerable to ransomware encryption."
+        },
+        {
+          "question_id": "SC-01",
+          "category": "Supply Chain & Fourth-Party Risk",
+          "question": "Does the vendor maintain a formal supply-chain risk management program evaluating their own critical subcontractors and hosting providers?",
+          "nist_ref": "NIST CSF 2.0 GV.SC-04 / GV.SC-07",
+          "weight": 2,
+          "response": "no",
+          "evidence": "Subcontracts tier-4 remote contractors in third countries without background checks or NDAs.",
+          "gap_notes": "Uncontrolled fourth-party supply chain risk."
+        },
+        {
+          "question_id": "HS-01",
+          "category": "Human & Physical Security",
+          "question": "Are pre-employment background screenings conducted for personnel with administrative access, accompanied by mandatory security awareness training?",
+          "nist_ref": "NIST CSF 2.0 PR.AT-01",
+          "weight": 1,
+          "response": "partial",
+          "evidence": "Basic resume check performed; no formal criminal record verification.",
+          "gap_notes": "Incomplete pre-employment screening."
+        }
+      ],
+      "inherent_likelihood": 5,
+      "inherent_impact": 4,
+      "inherent_risk_score": 20,
+      "inherent_risk_level": "Critical",
+      "identified_gaps": [
+        "Shared root accounts used across technicians without named individual logging",
+        "Jump host does not enforce FIDO2 or hardware MFA",
+        "No contractual supply chain review for tier-4 contractors",
+        "Missing independent SOC 2 Type II attestation",
+        "Absence of active tested Incident Response plan"
+      ],
+      "recommended_actions": [
+        "Decommission shared technician credentials and enforce enterprise Privileged Access Management (PAM)",
+        "Mandate FIDO2/Hardware MFA for all jump host remote access",
+        "Establish contractual 72-hour breach notification SLA",
+        "Require third-party SOC 2 Type II compliance audit within 90 days"
+      ],
+      "decision": "Reject/Escalate",
+      "assessor_notes": "CRITICAL RISK: Vendor holds administrative access into internal networks with shared unmonitored credentials. Immediate termination recommended unless emergency PAM isolation is implemented within 14 days."
+    },
+    {
+      "id": "ASM-115",
+      "vendor_id": "VND-115",
+      "assessor_name": "Marcus Vance (Senior C-SCRM Specialist)",
+      "assessment_date": "2026-05-25",
+      "answers": [
+        {
+          "question_id": "AC-01",
+          "category": "Access Control & Identity",
+          "question": "Is Multi-Factor Authentication (MFA) mandatory for all vendor employees accessing organizational data or remote administration interfaces?",
+          "nist_ref": "NIST CSF 2.0 PR.AA-01 / SP 800-161",
+          "weight": 3,
+          "response": "no",
+          "evidence": "IoT controller web portal accepts default admin/admin credentials over HTTP.",
+          "gap_notes": "Default credentials active on production IoT controller."
+        },
+        {
+          "question_id": "AC-02",
+          "category": "Access Control & Identity",
+          "question": "Does the vendor enforce Role-Based Access Control (RBAC) and the Principle of Least Privilege across administrative boundaries?",
+          "nist_ref": "NIST CSF 2.0 PR.AA-05",
+          "weight": 2,
+          "response": "no",
+          "evidence": "All service technicians use global master installer key.",
+          "gap_notes": "No individual identity segregation."
+        },
+        {
+          "question_id": "DP-01",
+          "category": "Data Protection & Cryptography",
+          "question": "Is organizational data encrypted in transit using modern cryptographic protocols (TLS 1.3/1.2) and at rest using strong standards (AES-256)?",
+          "nist_ref": "NIST CSF 2.0 PR.DS-01 / PR.DS-02",
+          "weight": 3,
+          "response": "no",
+          "evidence": "Biometric face vectors and employee badge PINs transmitted unencrypted over local subnet.",
+          "gap_notes": "Cleartext transmission of biometric templates."
+        },
+        {
+          "question_id": "DP-02",
+          "category": "Data Protection & Cryptography",
+          "question": "Does the vendor have documented data retention, secure sanitization, and end-of-contract data return/deletion procedures?",
+          "nist_ref": "NIST CSF 2.0 PR.DS-10",
+          "weight": 2,
+          "response": "no",
+          "evidence": "No sanitization protocol; CCTV footage stored on unmanaged NVR hard drives indefinitely.",
+          "gap_notes": "Indefinite unencrypted biometric data retention."
+        },
+        {
+          "question_id": "IR-01",
+          "category": "Incident Response & Breach Notification",
+          "question": "Does the vendor have an active, tested Incident Response Plan with a contractual breach notification SLA of 72 hours or less?",
+          "nist_ref": "NIST CSF 2.0 RS.MA-01 / GV.SC-08",
+          "weight": 3,
+          "response": "no",
+          "evidence": "Vendor has no documented IR plan or security team contact.",
+          "gap_notes": "Zero incident notification capability."
+        },
+        {
+          "question_id": "VM-01",
+          "category": "Vulnerability & Patch Management",
+          "question": "Does the vendor conduct recurring automated vulnerability scanning and remediate critical/high CVEs within 14 days?",
+          "nist_ref": "NIST CSF 2.0 PR.IR-01 / DE.CM-08",
+          "weight": 3,
+          "response": "no",
+          "evidence": "Firmware unchanged for 18 months; exposed to Mirai botnet CVEs.",
+          "gap_notes": "Critical unpatched IoT CVEs present."
+        },
+        {
+          "question_id": "CO-01",
+          "category": "Compliance & Security Certifications",
+          "question": "Does the vendor possess valid, unexpired third-party security attestations (e.g., SOC 2 Type II, ISO/IEC 27001:2022, PCI-DSS)?",
+          "nist_ref": "NIST CSF 2.0 GV.SC-06",
+          "weight": 2,
+          "response": "no",
+          "evidence": "No compliance certifications provided.",
+          "gap_notes": "Missing all baseline security certifications."
+        },
+        {
+          "question_id": "BC-01",
+          "category": "Business Continuity & Resilience",
+          "question": "Are automated, encrypted, and immutable/offline backups maintained, with tested Recovery Time Objective (RTO) and Recovery Point Objective (RPO)?",
+          "nist_ref": "NIST CSF 2.0 RC.RP-01",
+          "weight": 2,
+          "response": "no",
+          "evidence": "No backup architecture; single controller hardware failure leaves doors permanently unlocked.",
+          "gap_notes": "Fail-open risk during system outage."
+        },
+        {
+          "question_id": "SC-01",
+          "category": "Supply Chain & Fourth-Party Risk",
+          "question": "Does the vendor maintain a formal supply-chain risk management program evaluating their own critical subcontractors and hosting providers?",
+          "nist_ref": "NIST CSF 2.0 GV.SC-04 / GV.SC-07",
+          "weight": 2,
+          "response": "no",
+          "evidence": "OEM board sourced from unvetted overseas manufacturer.",
+          "gap_notes": "Unvetted hardware supply chain."
+        },
+        {
+          "question_id": "HS-01",
+          "category": "Human & Physical Security",
+          "question": "Are pre-employment background screenings conducted for personnel with administrative access, accompanied by mandatory security awareness training?",
+          "nist_ref": "NIST CSF 2.0 PR.AT-01",
+          "weight": 1,
+          "response": "partial",
+          "evidence": "Basic contractor ID badge check only.",
+          "gap_notes": "Unscreened technician access."
+        }
+      ],
+      "inherent_likelihood": 5,
+      "inherent_impact": 5,
+      "inherent_risk_score": 25,
+      "inherent_risk_level": "Critical",
+      "identified_gaps": [
+        "IoT controller firmware has not been patched for 18 months; exposed telnet service",
+        "Biometric templates stored in unencrypted flat files on local edge controller",
+        "Physical security breach protocol has zero contractual notification window",
+        "Default admin/admin credentials active on IoT controller"
+      ],
+      "recommended_actions": [
+        "Isolate all IoT controllers onto dedicated air-gapped VLAN with strict firewall rules",
+        "Mandate immediate firmware update and disable Telnet/HTTP",
+        "Enforce AES-256 local encryption on all biometric credential stores",
+        "Prepare transition plan to enterprise certified physical access provider"
+      ],
+      "decision": "Reject/Escalate",
+      "assessor_notes": "MAXIMUM CRITICAL RISK (Score 25/25): Physical security system connected to corporate network without encryption, authentication, or patching. Immediate network isolation initiated by SecOps."
+    },
+    {
+      "id": "ASM-118",
+      "vendor_id": "VND-118",
+      "assessor_name": "Elena Rostova (Lead Security Architect)",
+      "assessment_date": "2026-10-08",
+      "answers": [
+        {
+          "question_id": "AC-01",
+          "category": "Access Control & Identity",
+          "question": "Is Multi-Factor Authentication (MFA) mandatory for all vendor employees accessing organizational data or remote administration interfaces?",
+          "nist_ref": "NIST CSF 2.0 PR.AA-01 / SP 800-161",
+          "weight": 3,
+          "response": "yes",
+          "evidence": "FIDO2 WebAuthn enforced on cloud management console with geofencing.",
+          "gap_notes": ""
+        },
+        {
+          "question_id": "AC-02",
+          "category": "Access Control & Identity",
+          "question": "Does the vendor enforce Role-Based Access Control (RBAC) and the Principle of Least Privilege across administrative boundaries?",
+          "nist_ref": "NIST CSF 2.0 PR.AA-05",
+          "weight": 2,
+          "response": "yes",
+          "evidence": "Strict RBAC with dedicated read-only tenant isolation roles.",
+          "gap_notes": ""
+        },
+        {
+          "question_id": "DP-01",
+          "category": "Data Protection & Cryptography",
+          "question": "Is organizational data encrypted in transit using modern cryptographic protocols (TLS 1.3/1.2) and at rest using strong standards (AES-256)?",
+          "nist_ref": "NIST CSF 2.0 PR.DS-01 / PR.DS-02",
+          "weight": 3,
+          "response": "yes",
+          "evidence": "Telemetry streams encrypted with TLS 1.3 and mTLS; telemetry buckets encrypted with AES-256.",
+          "gap_notes": ""
+        },
+        {
+          "question_id": "DP-02",
+          "category": "Data Protection & Cryptography",
+          "question": "Does the vendor have documented data retention, secure sanitization, and end-of-contract data return/deletion procedures?",
+          "nist_ref": "NIST CSF 2.0 PR.DS-10",
+          "weight": 2,
+          "response": "yes",
+          "evidence": "Telemetry auto-purges after 90 days; customer can purge memory dump artifacts on demand.",
+          "gap_notes": ""
+        },
+        {
+          "question_id": "IR-01",
+          "category": "Incident Response & Breach Notification",
+          "question": "Does the vendor have an active, tested Incident Response Plan with a contractual breach notification SLA of 72 hours or less?",
+          "nist_ref": "NIST CSF 2.0 RS.MA-01 / GV.SC-08",
+          "weight": 3,
+          "response": "yes",
+          "evidence": "Contractually committed 2-hour notification for high-severity telemetry breaches.",
+          "gap_notes": ""
+        },
+        {
+          "question_id": "VM-01",
+          "category": "Vulnerability & Patch Management",
+          "question": "Does the vendor conduct recurring automated vulnerability scanning and remediate critical/high CVEs within 14 days?",
+          "nist_ref": "NIST CSF 2.0 PR.IR-01 / DE.CM-08",
+          "weight": 3,
+          "response": "partial",
+          "evidence": "Vulnerability scanning is exemplary, but kernel driver updates roll out automatically without customer staging ring option.",
+          "gap_notes": "Unstaged kernel updates create BSOD / kernel crash supply chain risk."
+        },
+        {
+          "question_id": "CO-01",
+          "category": "Compliance & Security Certifications",
+          "question": "Does the vendor possess valid, unexpired third-party security attestations (e.g., SOC 2 Type II, ISO/IEC 27001:2022, PCI-DSS)?",
+          "nist_ref": "NIST CSF 2.0 GV.SC-06",
+          "weight": 2,
+          "response": "yes",
+          "evidence": "ISO 27001:2022, SOC 2 Type II, and Common Criteria EAL4+ certs verified.",
+          "gap_notes": ""
+        },
+        {
+          "question_id": "BC-01",
+          "category": "Business Continuity & Resilience",
+          "question": "Are automated, encrypted, and immutable/offline backups maintained, with tested Recovery Time Objective (RTO) and Recovery Point Objective (RPO)?",
+          "nist_ref": "NIST CSF 2.0 RC.RP-01",
+          "weight": 2,
+          "response": "yes",
+          "evidence": "Dual-region cloud telemetry infrastructure with automated failover.",
+          "gap_notes": ""
+        },
+        {
+          "question_id": "SC-01",
+          "category": "Supply Chain & Fourth-Party Risk",
+          "question": "Does the vendor maintain a formal supply-chain risk management program evaluating their own critical subcontractors and hosting providers?",
+          "nist_ref": "NIST CSF 2.0 GV.SC-04 / GV.SC-07",
+          "weight": 2,
+          "response": "yes",
+          "evidence": "Full SLSA Level 3 signed build pipeline with verified provenance for all sensor binaries.",
+          "gap_notes": ""
+        },
+        {
+          "question_id": "HS-01",
+          "category": "Human & Physical Security",
+          "question": "Are pre-employment background screenings conducted for personnel with administrative access, accompanied by mandatory security awareness training?",
+          "nist_ref": "NIST CSF 2.0 PR.AT-01",
+          "weight": 1,
+          "response": "yes",
+          "evidence": "Comprehensive federal security clearance background checks for all threat intel analysts.",
+          "gap_notes": ""
+        }
+      ],
+      "inherent_likelihood": 2,
+      "inherent_impact": 5,
+      "inherent_risk_score": 10,
+      "inherent_risk_level": "High",
+      "identified_gaps": [
+        "Agent kernel updates pushed automatically without internal canary ring staging"
+      ],
+      "recommended_actions": [
+        "Configure tenant update policy to manual deployment ring (NIST CSF 2.0 PR.IR-01)"
+      ],
+      "decision": "Approve with Conditions",
+      "assessor_notes": "KryptonShield EDR provides exceptional telemetry protection, but kernel-level execution requires strict canary rollout rings to prevent widespread endpoint outage."
+    }
+  ],
+  "mitigations": [
+    {
+      "id": "ACT-201",
+      "vendor_id": "VND-101",
+      "vendor_name": "CloudOps Infrastructure",
+      "title": "Mandate FIDO2/Hardware MFA for Cloud Root Accounts",
+      "description": "Configure conditional access policies to strictly deny access to tenant management portals without phishing-resistant MFA tokens.",
+      "control_type": "Preventive",
+      "associated_gap": "MFA not enforced for all privileged tenant root/admin accounts",
+      "owner": "Cloud Architecture Lead",
+      "target_date": "2026-11-21",
+      "status": "Verified",
+      "evidence": "SSO conditional access policy screenshot and AWS IAM Identity Center audit logs verified by Security Assessor.",
+      "created_at": "2026-09-24T14:31:20.162330"
+    },
+    {
+      "id": "ACT-202",
+      "vendor_id": "VND-101",
+      "vendor_name": "CloudOps Infrastructure",
+      "title": "Establish 72-Hour Breach Notification SLA in Master Agreement",
+      "description": "Draft and sign an updated Vendor Security Agreement (VSA) amendment with mandatory notification triggers.",
+      "control_type": "Directive",
+      "associated_gap": "Incident response drill evidence not provided within SLA (72h)",
+      "owner": "Legal & Vendor Management",
+      "target_date": "2026-12-21",
+      "status": "In Progress",
+      "evidence": "Amendment sent to CloudOps Legal team on 2026-10-01; redlines currently under mutual counsel review.",
+      "created_at": "2026-09-24T14:31:20.162330"
+    },
+    {
+      "id": "ACT-203",
+      "vendor_id": "VND-103",
+      "vendor_name": "TalentPulse HRMS",
+      "title": "Require SOC 2 Type II Attestation within 90 Days",
+      "description": "Formally request an independent AICPA SOC 2 Type II audit report covering Security and Confidentiality Trust Services Criteria.",
+      "control_type": "Detective",
+      "associated_gap": "Missing independent SOC 2 Type II attestation (only SOC 1 Type I submitted)",
+      "owner": "Compliance Lead",
+      "target_date": "2026-12-21",
+      "status": "Open",
+      "evidence": "Formal letter dispatched with compliance requirements.",
+      "created_at": "2026-09-27T14:31:20.162330"
+    },
+    {
+      "id": "ACT-204",
+      "vendor_id": "VND-104",
+      "vendor_name": "ByteShield IT Support",
+      "title": "Decommission Shared Administrative Credentials & Enforce PAM",
+      "description": "Transition all technician remote sessions through an enterprise Privileged Access Management (PAM) vault with ephemeral credential rotation.",
+      "control_type": "Preventive",
+      "associated_gap": "Shared root accounts used across technicians without named individual logging",
+      "owner": "Chief Information Security Officer (CISO)",
+      "target_date": "2026-11-21",
+      "status": "Open",
+      "evidence": "Escalated to Executive Steering Committee due to Critical Risk score (20/25).",
+      "created_at": "2026-10-07T14:31:20.162330"
+    },
+    {
+      "id": "ACT-205",
+      "vendor_id": "VND-106",
+      "vendor_name": "Apex AI Analytics",
+      "title": "Execute Zero Data Retention & No-Training Addendum",
+      "description": "Execute Enterprise AI Data Protection Addendum guaranteeing customer payloads are discarded immediately post-inference.",
+      "control_type": "Directive",
+      "associated_gap": "Data retention policy does not explicitly guarantee zero training on customer prompts",
+      "owner": "AI Governance Lead",
+      "target_date": "2026-10-15",
+      "status": "Verified",
+      "evidence": "Counter-signed Enterprise Zero Retention Addendum (Doc ID #AI-DPA-991) stored in GRC repository.",
+      "created_at": "2026-10-08T14:31:20.162330"
+    },
+    {
+      "id": "ACT-206",
+      "vendor_id": "VND-107",
+      "vendor_name": "SentinelSOC Cyber",
+      "title": "Require Fourth-Party Subcontractor NDAs & Background Vetting",
+      "description": "Contractually obligate external tier-2 penetration testing sub-contractors to execute corporate bilateral non-disclosure agreements.",
+      "control_type": "Directive",
+      "associated_gap": "Subcontractor fourth-party penetration testers do not sign standard organizational NDA",
+      "owner": "Vendor Risk Manager",
+      "target_date": "2026-12-06",
+      "status": "In Progress",
+      "evidence": "Draft schedule C addendum shared with SentinelSOC procurement director.",
+      "created_at": "2026-10-08T14:31:20.162330"
+    },
+    {
+      "id": "ACT-207",
+      "vendor_id": "VND-109",
+      "vendor_name": "DataForge Analytics",
+      "title": "Enforce Dynamic Column-Level Data Masking in Analytics Staging",
+      "description": "Implement automated SHA-256 tokenization and RBAC masking on customer credit card, phone, and SSN fields in analytical data marts.",
+      "control_type": "Preventive",
+      "associated_gap": "Column-level masking is not enabled for sensitive PII/Financial tables in staging environments",
+      "owner": "Data Engineering Lead",
+      "target_date": "2026-11-21",
+      "status": "Verified",
+      "evidence": "Snowflake dynamic masking policy SQL scripts and sample non-privileged query results verified by GRC.",
+      "created_at": "2026-10-10T14:31:20.162330"
+    },
+    {
+      "id": "ACT-208",
+      "vendor_id": "VND-110",
+      "vendor_name": "NexusCode CI/CD",
+      "title": "Migrate Container Runners to Rootless Mode & Enforce OIDC AWS Roles",
+      "description": "Eliminate privileged docker daemon socket mounting; configure AWS IAM OpenID Connect federation for short-lived pipeline STS tokens.",
+      "control_type": "Preventive",
+      "associated_gap": "Build runner pods run in privileged Docker-in-Docker container mode",
+      "owner": "DevSecOps Lead",
+      "target_date": "2026-11-05",
+      "status": "Implemented",
+      "evidence": "Kaniko unprivileged builder rolled out to 100% of pipeline projects; awaiting final audit verification.",
+      "created_at": "2026-10-02T14:31:20.162330"
+    },
+    {
+      "id": "ACT-209",
+      "vendor_id": "VND-115",
+      "vendor_name": "FacilitySmart IoT",
+      "title": "Quarantine IoT Physical Controllers into Isolated Air-Gapped VLAN",
+      "description": "Sever direct routed access between IoT camera / turnstile network and corporate intranet. Mandate firewall microsegmentation.",
+      "control_type": "Preventive",
+      "associated_gap": "IoT controller firmware has not been patched for 18 months; exposed telnet service",
+      "owner": "Network Engineering Lead",
+      "target_date": "2026-11-05",
+      "status": "Verified",
+      "evidence": "Palo Alto Networks firewall access logs verify IoT VLAN isolated into zero-trust security zone with no corporate route.",
+      "created_at": "2026-09-12T14:31:20.162330"
+    },
+    {
+      "id": "ACT-210",
+      "vendor_id": "VND-115",
+      "vendor_name": "FacilitySmart IoT",
+      "title": "Enforce Biometric Cryptographic Storage Standard or Deprovision",
+      "description": "Require vendor to encrypt facial recognition vectors with AES-256 or decommission biometric turnstiles in favor of RFID key fobs.",
+      "control_type": "Corrective",
+      "associated_gap": "Biometric templates stored in unencrypted flat files on local edge controller",
+      "owner": "CISO & Real Estate Director",
+      "target_date": "2026-11-21",
+      "status": "In Progress",
+      "evidence": "RFP issued for replacement commercial physical access provider.",
+      "created_at": "2026-09-12T14:31:20.162330"
+    },
+    {
+      "id": "ACT-211",
+      "vendor_id": "VND-118",
+      "vendor_name": "KryptonShield EDR",
+      "title": "Establish Canary Deployment Ring for EDR Kernel Drivers",
+      "description": "Configure organizational tenant policy so agent kernel updates are staged across a 5% canary cohort for 7 days before broad rollout.",
+      "control_type": "Preventive",
+      "associated_gap": "Agent kernel updates pushed automatically without internal canary ring staging",
+      "owner": "Lead Endpoint Engineer",
+      "target_date": "2026-11-21",
+      "status": "Verified",
+      "evidence": "KryptonShield policy console configured: 'Canary-IT-Ring' (150 devices) active with 10-day delay for general fleet.",
+      "created_at": "2026-10-11T14:31:20.162330"
+    },
+    {
+      "id": "ACT-212",
+      "vendor_id": "VND-119",
+      "vendor_name": "FinTax Global",
+      "title": "Require Updated CREST-Accredited Penetration Test Summary",
+      "description": "Request immediate execution and delivery of annual third-party penetration testing report covering tax calculation API webhooks.",
+      "control_type": "Detective",
+      "associated_gap": "Third-party penetration testing report is over 14 months old; annual testing missed",
+      "owner": "Finance Compliance Lead",
+      "target_date": "2026-12-06",
+      "status": "Open",
+      "evidence": "Audit requirement communicated to FinTax security director on 2026-10-10.",
+      "created_at": "2026-10-10T14:31:20.162330"
+    },
+    {
+      "id": "ACT-213",
+      "vendor_id": "VND-120",
+      "vendor_name": "RapidHire Staffing",
+      "title": "Mandate Independent Criminal & Credential Screening Verification",
+      "description": "Contractually require First Advantage or HireRight background screening packages for all outsourced software engineering staff.",
+      "control_type": "Preventive",
+      "associated_gap": "Contractor background checks not verified by independent screening provider prior to provisioning",
+      "owner": "HR Operations & CISO",
+      "target_date": "2026-11-21",
+      "status": "In Progress",
+      "evidence": "Background verification clause incorporated into 2026 Master Staffing Agreement.",
+      "created_at": "2026-10-12T14:31:20.162330"
+    },
+    {
+      "id": "ACT-214",
+      "vendor_id": "VND-113",
+      "vendor_name": "Veritas Legal & Audit",
+      "title": "Verify Full-Disk BitLocker / FileVault Encryption on Partner Laptops",
+      "description": "Require Veritas managing partners to furnish device MDM compliance attestation verifying BitLocker/FileVault encryption on all audit laptops.",
+      "control_type": "Detective",
+      "associated_gap": "Partner laptops lack endpoint disk encryption enforcement audit attestation",
+      "owner": "Information Security Officer",
+      "target_date": "2026-11-21",
+      "status": "Verified",
+      "evidence": "Veritas IT Director provided Intune device health attestation showing 100% encrypted fleet.",
+      "created_at": "2026-10-04T14:31:20.162330"
+    },
+    {
+      "id": "ACT-215",
+      "vendor_id": "VND-105",
+      "vendor_name": "SwiftDeliver Logistics",
+      "title": "Document Rate Limiting & Circuit Breaker Thresholds",
+      "description": "Publish developer technical specification detailing API rate limits (100 req/sec) and failover circuit breaker configurations.",
+      "control_type": "Directive",
+      "associated_gap": "API rate-limiting threshold documentation not provided",
+      "owner": "Integration Architect",
+      "target_date": "2026-11-05",
+      "status": "Verified",
+      "evidence": "API Documentation v3.4 received and tested in sandbox environment.",
+      "created_at": "2026-09-30T14:31:20.162330"
+    }
+  ],
+  "audit_logs": [
+    {
+      "id": "LOG-001",
+      "timestamp": "2026-10-22T13:16:20.162437",
+      "user": "Lead Auditor (Alex)",
+      "action": "Security Control Verified",
+      "entity_type": "Mitigation",
+      "entity_id": "ACT-211",
+      "details": "Verified Canary Deployment Ring policy for KryptonShield EDR. Reduced Residual Risk to 4 (Low: L=1, I=4)."
+    },
+    {
+      "id": "LOG-002",
+      "timestamp": "2026-10-22T10:51:20.162437",
+      "user": "Security Lead (Priya)",
+      "action": "Mitigation Control Verified",
+      "entity_type": "Mitigation",
+      "entity_id": "ACT-207",
+      "details": "Verified dynamic column-level PII masking in DataForge Analytics staging lakehouse. Residual risk reduced to 6 (Medium: L=2, I=3)."
+    },
+    {
+      "id": "LOG-003",
+      "timestamp": "2026-10-22T08:11:20.162437",
+      "user": "Risk Assessor (Alex)",
+      "action": "Vendor Risk Assessment Completed",
+      "entity_type": "Vendor",
+      "entity_id": "VND-118",
+      "details": "Calculated Inherent Risk Score: 10 (High: L=2, I=5) for KryptonShield EDR."
+    },
+    {
+      "id": "LOG-004",
+      "timestamp": "2026-10-22T02:31:20.162437",
+      "user": "CISO (Chief Officer)",
+      "action": "Risk Treatment Escalation",
+      "entity_type": "Vendor",
+      "entity_id": "VND-115",
+      "details": "Escalated FacilitySmart IoT due to Maximum Critical Inherent Risk 25/25 (Unpatched firmware, cleartext biometrics). Network isolation enforced."
+    },
+    {
+      "id": "LOG-005",
+      "timestamp": "2026-10-21T10:31:20.162437",
+      "user": "Security Lead (Priya)",
+      "action": "Mitigation Control Verified",
+      "entity_type": "Mitigation",
+      "entity_id": "ACT-209",
+      "details": "Verified physical network microsegmentation and air-gapped VLAN for FacilitySmart IoT."
+    },
+    {
+      "id": "LOG-006",
+      "timestamp": "2026-10-21T06:31:20.162437",
+      "user": "SecOps Risk Officer",
+      "action": "Vendor Registered",
+      "entity_type": "Vendor",
+      "entity_id": "VND-120",
+      "details": "Registered vendor RapidHire Staffing (Staff Augmentation & IT Contractors) with Criticality=High."
+    },
+    {
+      "id": "LOG-007",
+      "timestamp": "2026-10-20T11:31:20.162437",
+      "user": "Compliance Officer",
+      "action": "SRMP NIST CSF 2.0 Audit Log Review",
+      "entity_type": "System",
+      "entity_id": "AUDIT-SYNC",
+      "details": "Automated inventory audit synchronized with NIST SP 800-161 Rev. 1 supply-chain criteria across 20 registered vendors."
+    },
+    {
+      "id": "LOG-008",
+      "timestamp": "2026-10-19T09:31:20.162437",
+      "user": "Lead Auditor (Alex)",
+      "action": "Security Control Verified",
+      "entity_type": "Mitigation",
+      "entity_id": "ACT-205",
+      "details": "Verified Zero Data Retention & No-Training Addendum with Apex AI Analytics. Residual risk updated to 4 (Low)."
+    },
+    {
+      "id": "LOG-009",
+      "timestamp": "2026-10-18T12:31:20.162437",
+      "user": "GRC Analyst (Elena)",
+      "action": "Vendor Risk Assessment Completed",
+      "entity_type": "Vendor",
+      "entity_id": "VND-111",
+      "details": "Completed NIST CSF 2.0 evaluation for SecureDesk Support. Inherent Score=6 (Medium), Decision=Approve."
+    },
+    {
+      "id": "LOG-010",
+      "timestamp": "2026-10-17T05:31:20.162437",
+      "user": "CISO (Chief Officer)",
+      "action": "Risk Treatment Escalation",
+      "entity_type": "Vendor",
+      "entity_id": "VND-104",
+      "details": "Escalated ByteShield IT Support due to Critical Inherent Risk 20/25 (Shared root credentials across technicians)."
+    },
+    {
+      "id": "LOG-011",
+      "timestamp": "2026-10-16T13:31:20.162437",
+      "user": "Lead Auditor (Alex)",
+      "action": "Security Control Verified",
+      "entity_type": "Mitigation",
+      "entity_id": "ACT-201",
+      "details": "Verified Hardware FIDO2 MFA policy for CloudOps Infrastructure. Reduced Residual Risk to 6 (Medium: L=2, I=3)."
+    },
+    {
+      "id": "LOG-012",
+      "timestamp": "2026-10-15T10:31:20.162437",
+      "user": "Security Lead (Priya)",
+      "action": "Mitigation Control Verified",
+      "entity_type": "Mitigation",
+      "entity_id": "ACT-214",
+      "details": "Verified BitLocker full-disk encryption attestation for Veritas Legal & Audit partner laptops."
+    },
+    {
+      "id": "LOG-013",
+      "timestamp": "2026-10-14T08:31:20.162437",
+      "user": "Risk Assessor (Alex)",
+      "action": "Vendor Risk Assessment Completed",
+      "entity_type": "Vendor",
+      "entity_id": "VND-102",
+      "details": "Completed PCI-DSS v4.0 Level 1 and NIST CSF 2.0 evaluation for PaySwift Gateway. Inherent Score=4 (Low), Decision=Approve."
+    },
+    {
+      "id": "LOG-014",
+      "timestamp": "2026-10-12T12:31:20.162437",
+      "user": "SecOps Risk Officer",
+      "action": "Vendor Registered",
+      "entity_type": "Vendor",
+      "entity_id": "VND-119",
+      "details": "Registered vendor FinTax Global (Financial SaaS & Tax Compliance) with Criticality=High."
+    },
+    {
+      "id": "LOG-015",
+      "timestamp": "2026-10-10T07:31:20.162437",
+      "user": "Lead Auditor (Alex)",
+      "action": "Security Control Verified",
+      "entity_type": "Mitigation",
+      "entity_id": "ACT-215",
+      "details": "Verified circuit breaker and rate limiting API technical documentation for SwiftDeliver Logistics."
+    },
+    {
+      "id": "LOG-016",
+      "timestamp": "2026-10-07T11:31:20.162437",
+      "user": "SecOps Admin",
+      "action": "System Health Check",
+      "entity_type": "System",
+      "entity_id": "CRON-HEALTH",
+      "details": "Periodic automated vendor tiering calculation executed; flagged 2 vendors with overdue review cycles."
+    }
+  ]
+}

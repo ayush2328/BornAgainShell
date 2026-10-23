@@ -1,0 +1,102 @@
+{
+  "assessment_metadata": {
+    "title": "Third-Party Vendor Cybersecurity Risk Assessment Template",
+    "framework": "NIST CSF 2.0 (GV.SC) & NIST SP 800-161 Rev. 1",
+    "vendor_id": "VND-101",
+    "vendor_name": "CloudOps Infrastructure",
+    "assessor_name": "Ayush (Lead Risk Assessor)",
+    "assessment_date": "2026-10-22",
+    "assessor_notes": "Quarterly third-party supplier cybersecurity maturity evaluation. Validating MFA, encryption keys, and incident SLA."
+  },
+  "instructions": {
+    "response_options": ["yes", "partial", "no", "na"],
+    "response_meanings": {
+      "yes": "Fully implemented and verified with documented audit evidence.",
+      "partial": "Partially implemented or exceptions exist (e.g., SMS MFA instead of hardware tokens).",
+      "no": "Control is missing or non-compliant (flags an identified security gap).",
+      "na": "Not applicable to this vendor's scope of service."
+    }
+  },
+  "answers": [
+    {
+      "question_id": "AC-01",
+      "category": "Access Control & Identity",
+      "nist_ref": "NIST CSF 2.0 PR.AA-01 / SP 800-161",
+      "response": "no",
+      "evidence": "Audit check revealed that root and privileged administrator accounts do not enforce hardware/FIDO2 MFA.",
+      "gap_notes": "Privileged accounts exposed to credential stuffing and phishing attacks."
+    },
+    {
+      "question_id": "AC-02",
+      "category": "Access Control & Identity",
+      "nist_ref": "NIST CSF 2.0 PR.AA-05",
+      "response": "yes",
+      "evidence": "RBAC matrix reviewed. Individual named accounts used for tenant management; quarterly access reviews verified.",
+      "gap_notes": ""
+    },
+    {
+      "question_id": "DP-01",
+      "category": "Data Protection & Cryptography",
+      "nist_ref": "NIST CSF 2.0 PR.DS-01 / PR.DS-02",
+      "response": "yes",
+      "evidence": "TLS 1.3 enforced on all API endpoints; customer data encrypted using AES-256 with KMS key rotation.",
+      "gap_notes": ""
+    },
+    {
+      "question_id": "DP-02",
+      "category": "Data Protection & Cryptography",
+      "nist_ref": "NIST CSF 2.0 PR.DS-10",
+      "response": "yes",
+      "evidence": "Data retention policy mandates NIST SP 800-88 sanitization with cryptoshredding certificate upon contract termination.",
+      "gap_notes": ""
+    },
+    {
+      "question_id": "IR-01",
+      "category": "Incident Response & Breach Notification",
+      "nist_ref": "NIST CSF 2.0 RS.MA-01 / GV.SC-08",
+      "response": "no",
+      "evidence": "Vendor agreement lacks a contractual 72-hour breach notification SLA; no record of tabletop exercises provided.",
+      "gap_notes": "Delayed incident notification could prevent timely mitigation during a supply chain compromise."
+    },
+    {
+      "question_id": "VM-01",
+      "category": "Vulnerability & Patch Management",
+      "nist_ref": "NIST CSF 2.0 PR.IR-01 / DE.CM-08",
+      "response": "partial",
+      "evidence": "Automated monthly vulnerability scans conducted, but critical CVE patch SLA currently averages 28 days instead of 14 days.",
+      "gap_notes": "Vulnerability exposure window is longer than acceptable enterprise risk threshold."
+    },
+    {
+      "question_id": "CO-01",
+      "category": "Compliance & Security Certifications",
+      "nist_ref": "NIST CSF 2.0 GV.SC-06",
+      "response": "yes",
+      "evidence": "Valid ISO/IEC 27001:2022 certificate and SOC 2 Type II report (dated within the last 9 months).",
+      "gap_notes": ""
+    },
+    {
+      "question_id": "BC-01",
+      "category": "Business Continuity & Resilience",
+      "nist_ref": "NIST CSF 2.0 RC.RP-01",
+      "response": "yes",
+      "evidence": "Automated daily geo-redundant backups with tested RTO of 4 hours and RPO of 15 minutes.",
+      "gap_notes": ""
+    },
+    {
+      "question_id": "SC-01",
+      "category": "Supply Chain & Fourth-Party Risk",
+      "nist_ref": "NIST CSF 2.0 GV.SC-04 / GV.SC-07",
+      "response": "partial",
+      "evidence": "Vendor conducts annual risk reviews for Tier 1 hosting providers, but lacks a formal Software Bill of Materials (SBOM).",
+      "gap_notes": "Limited visibility into fourth-party open source library vulnerabilities."
+    },
+    {
+      "question_id": "HS-01",
+      "category": "Human & Physical Security",
+      "nist_ref": "NIST CSF 2.0 PR.AT-01",
+      "response": "yes",
+      "evidence": "Mandatory background screening for all engineering personnel; bi-annual anti-phishing training simulated.",
+      "gap_notes": ""
+    }
+  ]
+}

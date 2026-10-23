@@ -1,0 +1,92 @@
+{
+  "assessment_metadata": {
+    "title": "ByteShield IT Support - Critical Risk Assessment",
+    "vendor_id": "VND-104",
+    "vendor_name": "ByteShield IT Support",
+    "assessor_name": "Ayush (Lead Risk Assessor)",
+    "assessment_date": "2026-10-22",
+    "assessor_notes": "CRITICAL ESCALATION: Outsourced MSP technician review indicates unacceptable shared root credential practices and unmonitored VPN jump hosts."
+  },
+  "answers": [
+    {
+      "question_id": "AC-01",
+      "category": "Access Control & Identity",
+      "nist_ref": "NIST CSF 2.0 PR.AA-01 / SP 800-161",
+      "response": "no",
+      "evidence": "Remote jump host allows password-only authentication; MFA not enforced for MSP technicians.",
+      "gap_notes": "High risk of credential stuffing and unauthorized lateral movement."
+    },
+    {
+      "question_id": "AC-02",
+      "category": "Access Control & Identity",
+      "nist_ref": "NIST CSF 2.0 PR.AA-05",
+      "response": "no",
+      "evidence": "Generic shared 'administrator' account shared among 8 offshore technicians without individual audit logging.",
+      "gap_notes": "Lack of accountability and complete violation of least privilege RBAC."
+    },
+    {
+      "question_id": "DP-01",
+      "category": "Data Protection & Cryptography",
+      "nist_ref": "NIST CSF 2.0 PR.DS-01 / PR.DS-02",
+      "response": "partial",
+      "evidence": "Data encrypted in transit via VPN, but administrative session logs stored unencrypted in plain text.",
+      "gap_notes": "Plaintext logs expose corporate credentials."
+    },
+    {
+      "question_id": "DP-02",
+      "category": "Data Protection & Cryptography",
+      "nist_ref": "NIST CSF 2.0 PR.DS-10",
+      "response": "no",
+      "evidence": "No documented data return or cryptographic sanitization procedure upon technician termination.",
+      "gap_notes": "Residual data lingering on technician personal workstations."
+    },
+    {
+      "question_id": "IR-01",
+      "category": "Incident Response & Breach Notification",
+      "nist_ref": "NIST CSF 2.0 RS.MA-01 / GV.SC-08",
+      "response": "no",
+      "evidence": "Vendor does not commit to any breach notification window; standard contract is completely silent on cybersecurity incidents.",
+      "gap_notes": "Unacceptable exposure in the event of ransomware or active adversary presence."
+    },
+    {
+      "question_id": "VM-01",
+      "category": "Vulnerability & Patch Management",
+      "nist_ref": "NIST CSF 2.0 PR.IR-01 / DE.CM-08",
+      "response": "no",
+      "evidence": "No recurring vulnerability scans conducted; servers running end-of-life operating systems without vendor support.",
+      "gap_notes": "Multiple unpatched known CVEs exposed on the management perimeter."
+    },
+    {
+      "question_id": "CO-01",
+      "category": "Compliance & Security Certifications",
+      "nist_ref": "NIST CSF 2.0 GV.SC-06",
+      "response": "no",
+      "evidence": "Vendor possesses no independent security attestations (no SOC 2, ISO 27001, or Cyber Essentials Plus).",
+      "gap_notes": "Zero independent verification of security posture."
+    },
+    {
+      "question_id": "BC-01",
+      "category": "Business Continuity & Resilience",
+      "nist_ref": "NIST CSF 2.0 RC.RP-01",
+      "response": "partial",
+      "evidence": "Backups taken weekly to local NAS, but not air-gapped or immutable; no restoration test performed in the last 18 months.",
+      "gap_notes": "High vulnerability to total data loss in a ransomware outbreak."
+    },
+    {
+      "question_id": "SC-01",
+      "category": "Supply Chain & Fourth-Party Risk",
+      "nist_ref": "NIST CSF 2.0 GV.SC-04 / GV.SC-07",
+      "response": "no",
+      "evidence": "Vendor subcontracts support tickets to unvetted Tier-4 third parties without our knowledge or approval.",
+      "gap_notes": "Unmonitored fourth-party supply chain exposure."
+    },
+    {
+      "question_id": "HS-01",
+      "category": "Human & Physical Security",
+      "nist_ref": "NIST CSF 2.0 PR.AT-01",
+      "response": "partial",
+      "evidence": "Basic ID check performed upon hire, but no formal criminal background checks or ongoing phishing training.",
+      "gap_notes": "Insider threat vulnerability."
+    }
+  ]
+}

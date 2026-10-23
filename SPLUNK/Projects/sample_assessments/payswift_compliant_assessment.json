@@ -1,0 +1,92 @@
+{
+  "assessment_metadata": {
+    "title": "PaySwift Gateway - Full Compliance Assessment",
+    "vendor_id": "VND-102",
+    "vendor_name": "PaySwift Gateway",
+    "assessor_name": "Ayush (Lead Risk Assessor)",
+    "assessment_date": "2026-10-22",
+    "assessor_notes": "Tier-1 Payment Processor due diligence. Vendor demonstrates industry-leading cybersecurity controls, hardware token MFA, and unexpired PCI-DSS Level 1 AoC."
+  },
+  "answers": [
+    {
+      "question_id": "AC-01",
+      "category": "Access Control & Identity",
+      "nist_ref": "NIST CSF 2.0 PR.AA-01 / SP 800-161",
+      "response": "yes",
+      "evidence": "FIDO2 / WebAuthn hardware security keys mandatory for all staff accessing production billing infrastructure.",
+      "gap_notes": ""
+    },
+    {
+      "question_id": "AC-02",
+      "category": "Access Control & Identity",
+      "nist_ref": "NIST CSF 2.0 PR.AA-05",
+      "response": "yes",
+      "evidence": "Zero Standing Privileges (ZSP) enforced via CyberArk PAM with just-in-time access and full session recording.",
+      "gap_notes": ""
+    },
+    {
+      "question_id": "DP-01",
+      "category": "Data Protection & Cryptography",
+      "nist_ref": "NIST CSF 2.0 PR.DS-01 / PR.DS-02",
+      "response": "yes",
+      "evidence": "Cardholder data tokenized and encrypted with dedicated FIPS 140-3 Level 3 Hardware Security Modules (HSM). TLS 1.3 only.",
+      "gap_notes": ""
+    },
+    {
+      "question_id": "DP-02",
+      "category": "Data Protection & Cryptography",
+      "nist_ref": "NIST CSF 2.0 PR.DS-10",
+      "response": "yes",
+      "evidence": "Automated data lifecycle management adhering to PCI-DSS 3.1 sanitization and secure deletion verification.",
+      "gap_notes": ""
+    },
+    {
+      "question_id": "IR-01",
+      "category": "Incident Response & Breach Notification",
+      "nist_ref": "NIST CSF 2.0 RS.MA-01 / GV.SC-08",
+      "response": "yes",
+      "evidence": "Contractually committed 24-hour breach notification SLA; quarterly tabletop exercises with external incident response retainer (Mandiant).",
+      "gap_notes": ""
+    },
+    {
+      "question_id": "VM-01",
+      "category": "Vulnerability & Patch Management",
+      "nist_ref": "NIST CSF 2.0 PR.IR-01 / DE.CM-08",
+      "response": "yes",
+      "evidence": "Continuous Qualys scanning with 7-day critical patch SLA; bi-annual white-box penetration test by Bishop Fox.",
+      "gap_notes": ""
+    },
+    {
+      "question_id": "CO-01",
+      "category": "Compliance & Security Certifications",
+      "nist_ref": "NIST CSF 2.0 GV.SC-06",
+      "response": "yes",
+      "evidence": "PCI-DSS v4.0 Level 1 Service Provider AoC and SOC 2 Type II with zero testing exceptions reviewed.",
+      "gap_notes": ""
+    },
+    {
+      "question_id": "BC-01",
+      "category": "Business Continuity & Resilience",
+      "nist_ref": "NIST CSF 2.0 RC.RP-01",
+      "response": "yes",
+      "evidence": "Multi-region active-active architecture with 99.999% uptime SLA, tested RTO < 5 minutes, RPO = 0.",
+      "gap_notes": ""
+    },
+    {
+      "question_id": "SC-01",
+      "category": "Supply Chain & Fourth-Party Risk",
+      "nist_ref": "NIST CSF 2.0 GV.SC-04 / GV.SC-07",
+      "response": "yes",
+      "evidence": "Formal C-SCRM program with continuous automated SBOM dependency scanning (Snyk) and contractual pass-through security requirements.",
+      "gap_notes": ""
+    },
+    {
+      "question_id": "HS-01",
+      "category": "Human & Physical Security",
+      "nist_ref": "NIST CSF 2.0 PR.AT-01",
+      "response": "yes",
+      "evidence": "Rigorous background checks (financial & criminal) and monthly adaptive security awareness training for all engineers.",
+      "gap_notes": ""
+    }
+  ]
+}
